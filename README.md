@@ -12,9 +12,9 @@ RecallRadar turns that question into a time-ordered experiment for a regulated e
 
 ## The result
 
-On the held-out 2023 to 2024 set of 400 code-quarter rows, RecallRadar reached precision@50 of **1.000000**, with 50 of the top 50 rows later starting a Class I or II recall in the next 12 months. The 1,000-resample bootstrap 95% interval was **1.000000 to 1.000000**. The raw report-count baseline reached **0.700000**, or 35 of 50. The prior-recall baseline also reached **1.000000**, or 50 of 50, so adverse-event patterns tied recall history on the headline metric.
+On the held-out 2023 to 2024 set of 400 code-quarter rows (187, or 47%, later started a Class I or II recall within 12 months), RecallRadar reached a PR-AUC of **0.959**, against **0.928** for the prior-recall baseline and **0.491** for raw report volume. The model's 1,000-resample bootstrap 95% interval was **0.934 to 0.977**. Exact values: 0.958812, 0.927835, 0.491496.
 
-PR-AUC was **0.958812** for the model, **0.491496** for report volume, and **0.927835** for prior recall. The model's bootstrap 95% PR-AUC interval was **0.934307 to 0.976997**. On this split, adverse-event patterns add ranking signal beyond recall history, even though the top-50 precision is tied. This is a useful signal-detection demo, not a claim that the model should make a clinical or regulatory decision.
+PR-AUC is the headline because the top-50 cutoff saturates on this split: the model and the prior-recall baseline both hit 50 of 50 (precision@50 of 1.0), while report volume hit 35 of 50. On this split, adverse-event patterns add ranking signal beyond recall history. This is a useful signal-detection demo, not a claim that the model should make a clinical or regulatory decision.
 
 ## How it works
 

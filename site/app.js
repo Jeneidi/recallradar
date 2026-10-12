@@ -4,7 +4,7 @@
   const status = document.querySelector("#demo-status");
   const chart = document.querySelector("#backtest-chart");
 
-  const formatScore = (value) => Number(value).toFixed(6);
+  const formatScore = (value) => Number(value).toFixed(3);
   const pct = (value) => `${(Number(value) * 100).toFixed(1)}%`;
 
   function renderFlags(results, quarter) {
