@@ -1,0 +1,1448 @@
+{
+  "project": "RecallRadar",
+  "recorded_with": "Python, LightGBM and SHAP",
+  "recorded_date": "2026-10-12",
+  "data": {
+    "rows": 1000,
+    "quarters": 40,
+    "unique_codes": 70,
+    "train_rows": 700,
+    "validation_rows": 100,
+    "test_rows": 200,
+    "test_positive_rows": 72,
+    "top_codes_per_quarter": 25
+  },
+  "metrics": {
+    "headline": {
+      "metric": "precision_at_50",
+      "model": 0.8,
+      "model_hits": 40,
+      "volume_baseline": 0.7,
+      "volume_hits": 35,
+      "prior_recall_baseline": 0.9,
+      "prior_recall_hits": 45,
+      "model_ci_95": [
+        0.68,
+        0.92
+      ]
+    },
+    "pr_auc": {
+      "model": 0.78534,
+      "volume_baseline": 0.621067,
+      "prior_recall_baseline": 0.86965,
+      "model_ci_95": [
+        0.69031,
+        0.862539
+      ]
+    }
+  },
+  "backtest": [
+    {
+      "quarter": "2022 Q1",
+      "model_precision_at_10": 0.6,
+      "volume_precision_at_10": 0.5
+    },
+    {
+      "quarter": "2022 Q2",
+      "model_precision_at_10": 0.7,
+      "volume_precision_at_10": 0.4
+    },
+    {
+      "quarter": "2022 Q3",
+      "model_precision_at_10": 0.8,
+      "volume_precision_at_10": 0.6
+    },
+    {
+      "quarter": "2022 Q4",
+      "model_precision_at_10": 0.7,
+      "volume_precision_at_10": 0.5
+    },
+    {
+      "quarter": "2023 Q1",
+      "model_precision_at_10": 0.6,
+      "volume_precision_at_10": 0.4
+    },
+    {
+      "quarter": "2023 Q2",
+      "model_precision_at_10": 0.6,
+      "volume_precision_at_10": 0.3
+    },
+    {
+      "quarter": "2023 Q3",
+      "model_precision_at_10": 0.4,
+      "volume_precision_at_10": 0.5
+    },
+    {
+      "quarter": "2023 Q4",
+      "model_precision_at_10": 0.7,
+      "volume_precision_at_10": 0.5
+    },
+    {
+      "quarter": "2024 Q1",
+      "model_precision_at_10": 0.7,
+      "volume_precision_at_10": 0.6
+    },
+    {
+      "quarter": "2024 Q2",
+      "model_precision_at_10": 0.6,
+      "volume_precision_at_10": 0.7
+    },
+    {
+      "quarter": "2024 Q3",
+      "model_precision_at_10": 0.9,
+      "volume_precision_at_10": 0.7
+    },
+    {
+      "quarter": "2024 Q4",
+      "model_precision_at_10": 0.8,
+      "volume_precision_at_10": 0.7
+    }
+  ],
+  "demo_quarters": {
+    "2022 Q1": [
+      {
+        "code": "FRN",
+        "score": 0.997984,
+        "label": 1,
+        "report_count": 369720,
+        "injury_share": 0.000495,
+        "death_share": 4.6e-05,
+        "report_growth": 1.977435,
+        "manufacturer_count": 57,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "BZD",
+        "score": 0.995092,
+        "label": 1,
+        "report_count": 10104,
+        "injury_share": 0.081156,
+        "death_share": 0.003464,
+        "report_growth": 1.883562,
+        "manufacturer_count": 41,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "QKP",
+        "score": 0.988741,
+        "label": 0,
+        "report_count": 3320,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": -0.073143,
+        "manufacturer_count": 47,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "CBK",
+        "score": 0.988632,
+        "label": 1,
+        "report_count": 3540,
+        "injury_share": 0.053107,
+        "death_share": 0.009322,
+        "report_growth": 0.034483,
+        "manufacturer_count": 40,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "DZE",
+        "score": 0.982831,
+        "label": 1,
+        "report_count": 113252,
+        "injury_share": 0.992601,
+        "death_share": 0.0,
+        "report_growth": -0.059478,
+        "manufacturer_count": 38,
+        "reason": "report volume pushed the score upward"
+      },
+      {
+        "code": "LZG",
+        "score": 0.878372,
+        "label": 1,
+        "report_count": 7213,
+        "injury_share": 0.089145,
+        "death_share": 0.001664,
+        "report_growth": -0.079505,
+        "manufacturer_count": 8,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "MDS",
+        "score": 0.563046,
+        "label": 0,
+        "report_count": 5152,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 1.508277,
+        "manufacturer_count": 11,
+        "reason": "the death share pushed the score upward"
+      },
+      {
+        "code": "GDW",
+        "score": 0.171637,
+        "label": 1,
+        "report_count": 3024,
+        "injury_share": 0.191799,
+        "death_share": 0.007606,
+        "report_growth": -0.08113,
+        "manufacturer_count": 28,
+        "reason": "report volume pushed the score upward"
+      },
+      {
+        "code": "QBJ",
+        "score": 0.140057,
+        "label": 0,
+        "report_count": 48624,
+        "injury_share": 0.00619,
+        "death_share": 0.0,
+        "report_growth": -0.209816,
+        "manufacturer_count": 6,
+        "reason": "the death share pushed the score upward"
+      },
+      {
+        "code": "OZP",
+        "score": 0.139669,
+        "label": 0,
+        "report_count": 37119,
+        "injury_share": 0.086209,
+        "death_share": 0.000916,
+        "report_growth": 1.15758,
+        "manufacturer_count": 3,
+        "reason": "the injury share pushed the score upward"
+      }
+    ],
+    "2022 Q2": [
+      {
+        "code": "BZD",
+        "score": 0.996596,
+        "label": 1,
+        "report_count": 34785,
+        "injury_share": 0.034986,
+        "death_share": 0.001495,
+        "report_growth": 2.442696,
+        "manufacturer_count": 42,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "FRN",
+        "score": 0.996403,
+        "label": 1,
+        "report_count": 373076,
+        "injury_share": 0.000684,
+        "death_share": 5.4e-05,
+        "report_growth": 0.009077,
+        "manufacturer_count": 52,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "FPA",
+        "score": 0.994929,
+        "label": 1,
+        "report_count": 3730,
+        "injury_share": 0.036461,
+        "death_share": 0.0,
+        "report_growth": 0.49499,
+        "manufacturer_count": 59,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "CBK",
+        "score": 0.994038,
+        "label": 1,
+        "report_count": 3515,
+        "injury_share": 0.04808,
+        "death_share": 0.009388,
+        "report_growth": -0.007062,
+        "manufacturer_count": 43,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "DZE",
+        "score": 0.986976,
+        "label": 1,
+        "report_count": 116641,
+        "injury_share": 0.991958,
+        "death_share": 0.0,
+        "report_growth": 0.029924,
+        "manufacturer_count": 36,
+        "reason": "report volume pushed the score upward"
+      },
+      {
+        "code": "QKP",
+        "score": 0.983709,
+        "label": 0,
+        "report_count": 6071,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.828614,
+        "manufacturer_count": 39,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "LZG",
+        "score": 0.960387,
+        "label": 1,
+        "report_count": 7059,
+        "injury_share": 0.089673,
+        "death_share": 0.000992,
+        "report_growth": -0.02135,
+        "manufacturer_count": 10,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "FTL",
+        "score": 0.659456,
+        "label": 1,
+        "report_count": 3255,
+        "injury_share": 0.974808,
+        "death_share": 0.006144,
+        "report_growth": -0.131073,
+        "manufacturer_count": 24,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "QBJ",
+        "score": 0.320838,
+        "label": 0,
+        "report_count": 59427,
+        "injury_share": 0.00525,
+        "death_share": 0.0,
+        "report_growth": 0.222174,
+        "manufacturer_count": 8,
+        "reason": "the death share pushed the score upward"
+      },
+      {
+        "code": "OYC",
+        "score": 0.20103,
+        "label": 0,
+        "report_count": 20396,
+        "injury_share": 0.016131,
+        "death_share": 0.000392,
+        "report_growth": 0.099811,
+        "manufacturer_count": 4,
+        "reason": "the injury share pushed the score upward"
+      }
+    ],
+    "2022 Q3": [
+      {
+        "code": "FRN",
+        "score": 0.994941,
+        "label": 1,
+        "report_count": 92548,
+        "injury_share": 0.002669,
+        "death_share": 0.00027,
+        "report_growth": -0.751933,
+        "manufacturer_count": 49,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "FPA",
+        "score": 0.993364,
+        "label": 1,
+        "report_count": 4230,
+        "injury_share": 0.026714,
+        "death_share": 0.000709,
+        "report_growth": 0.134048,
+        "manufacturer_count": 52,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "BZD",
+        "score": 0.990962,
+        "label": 1,
+        "report_count": 33982,
+        "injury_share": 0.058678,
+        "death_share": 0.003855,
+        "report_growth": -0.023085,
+        "manufacturer_count": 43,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "CBK",
+        "score": 0.987101,
+        "label": 1,
+        "report_count": 4018,
+        "injury_share": 0.03335,
+        "death_share": 0.006969,
+        "report_growth": 0.143101,
+        "manufacturer_count": 47,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "DZE",
+        "score": 0.986976,
+        "label": 1,
+        "report_count": 119887,
+        "injury_share": 0.993327,
+        "death_share": 0.0,
+        "report_growth": 0.027829,
+        "manufacturer_count": 37,
+        "reason": "report volume pushed the score upward"
+      },
+      {
+        "code": "GDW",
+        "score": 0.930619,
+        "label": 1,
+        "report_count": 3459,
+        "injury_share": 0.221162,
+        "death_share": 0.004626,
+        "report_growth": -0.013124,
+        "manufacturer_count": 32,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "LZG",
+        "score": 0.854833,
+        "label": 1,
+        "report_count": 7943,
+        "injury_share": 0.093667,
+        "death_share": 0.000378,
+        "report_growth": 0.12523,
+        "manufacturer_count": 9,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "LWS",
+        "score": 0.258659,
+        "label": 0,
+        "report_count": 5183,
+        "injury_share": 0.669303,
+        "death_share": 0.005209,
+        "report_growth": -0.293195,
+        "manufacturer_count": 24,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "QFG",
+        "score": 0.192761,
+        "label": 1,
+        "report_count": 34568,
+        "injury_share": 0.083112,
+        "death_share": 0.000174,
+        "report_growth": 0.125297,
+        "manufacturer_count": 5,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "QBJ",
+        "score": 0.082445,
+        "label": 0,
+        "report_count": 61371,
+        "injury_share": 0.006827,
+        "death_share": 0.0,
+        "report_growth": 0.032712,
+        "manufacturer_count": 7,
+        "reason": "the death share pushed the score upward"
+      }
+    ],
+    "2022 Q4": [
+      {
+        "code": "FPA",
+        "score": 0.995532,
+        "label": 1,
+        "report_count": 2683,
+        "injury_share": 0.039881,
+        "death_share": 0.001864,
+        "report_growth": -0.365721,
+        "manufacturer_count": 79,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "FRN",
+        "score": 0.993778,
+        "label": 1,
+        "report_count": 52676,
+        "injury_share": 0.003873,
+        "death_share": 0.000418,
+        "report_growth": -0.430825,
+        "manufacturer_count": 68,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "CBK",
+        "score": 0.992841,
+        "label": 1,
+        "report_count": 4901,
+        "injury_share": 0.032442,
+        "death_share": 0.006121,
+        "report_growth": 0.219761,
+        "manufacturer_count": 51,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "BZD",
+        "score": 0.984927,
+        "label": 1,
+        "report_count": 11897,
+        "injury_share": 0.064638,
+        "death_share": 0.007985,
+        "report_growth": -0.649903,
+        "manufacturer_count": 49,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "DZE",
+        "score": 0.984619,
+        "label": 1,
+        "report_count": 133444,
+        "injury_share": 0.992356,
+        "death_share": 2.2e-05,
+        "report_growth": 0.113081,
+        "manufacturer_count": 32,
+        "reason": "report volume pushed the score upward"
+      },
+      {
+        "code": "LZG",
+        "score": 0.984471,
+        "label": 0,
+        "report_count": 6010,
+        "injury_share": 0.093012,
+        "death_share": 0.001165,
+        "report_growth": -0.243359,
+        "manufacturer_count": 12,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "QBJ",
+        "score": 0.656119,
+        "label": 0,
+        "report_count": 62866,
+        "injury_share": 0.008765,
+        "death_share": 0.0,
+        "report_growth": 0.02436,
+        "manufacturer_count": 5,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "FDF",
+        "score": 0.285334,
+        "label": 1,
+        "report_count": 2577,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 2577.0,
+        "manufacturer_count": 9,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "QFG",
+        "score": 0.192761,
+        "label": 1,
+        "report_count": 39082,
+        "injury_share": 0.079909,
+        "death_share": 0.000154,
+        "report_growth": 0.130583,
+        "manufacturer_count": 5,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "FTR",
+        "score": 0.075116,
+        "label": 0,
+        "report_count": 8725,
+        "injury_share": 0.992779,
+        "death_share": 0.0,
+        "report_growth": 0.153948,
+        "manufacturer_count": 31,
+        "reason": "the manufacturer count pushed the score upward"
+      }
+    ],
+    "2023 Q1": [
+      {
+        "code": "FRN",
+        "score": 0.993631,
+        "label": 1,
+        "report_count": 46123,
+        "injury_share": 0.005442,
+        "death_share": 0.000304,
+        "report_growth": -0.124402,
+        "manufacturer_count": 63,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "FPA",
+        "score": 0.988486,
+        "label": 1,
+        "report_count": 2953,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.100634,
+        "manufacturer_count": 66,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "CBK",
+        "score": 0.982694,
+        "label": 1,
+        "report_count": 5239,
+        "injury_share": 0.036648,
+        "death_share": 0.006108,
+        "report_growth": 0.068966,
+        "manufacturer_count": 39,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "BZD",
+        "score": 0.907241,
+        "label": 1,
+        "report_count": 5979,
+        "injury_share": 0.057367,
+        "death_share": 0.007359,
+        "report_growth": -0.497436,
+        "manufacturer_count": 31,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "GDW",
+        "score": 0.899525,
+        "label": 1,
+        "report_count": 3449,
+        "injury_share": 0.172224,
+        "death_share": 0.004059,
+        "report_growth": -0.046447,
+        "manufacturer_count": 26,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "DZE",
+        "score": 0.875574,
+        "label": 1,
+        "report_count": 122728,
+        "injury_share": 0.992667,
+        "death_share": 0.0,
+        "report_growth": -0.080303,
+        "manufacturer_count": 45,
+        "reason": "report volume pushed the score upward"
+      },
+      {
+        "code": "QBJ",
+        "score": 0.825722,
+        "label": 0,
+        "report_count": 69621,
+        "injury_share": 0.010816,
+        "death_share": 0.0,
+        "report_growth": 0.107451,
+        "manufacturer_count": 6,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "LZG",
+        "score": 0.429736,
+        "label": 0,
+        "report_count": 6119,
+        "injury_share": 0.087923,
+        "death_share": 0.001144,
+        "report_growth": 0.018136,
+        "manufacturer_count": 7,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "MDS",
+        "score": 0.412306,
+        "label": 0,
+        "report_count": 10368,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 1.012422,
+        "manufacturer_count": 8,
+        "reason": "the death share pushed the score upward"
+      },
+      {
+        "code": "OZO",
+        "score": 0.211844,
+        "label": 0,
+        "report_count": 8586,
+        "injury_share": 0.095737,
+        "death_share": 0.005474,
+        "report_growth": 0.009999,
+        "manufacturer_count": 3,
+        "reason": "the injury share pushed the score upward"
+      }
+    ],
+    "2023 Q2": [
+      {
+        "code": "FPA",
+        "score": 0.995428,
+        "label": 1,
+        "report_count": 2997,
+        "injury_share": 0.039373,
+        "death_share": 0.002336,
+        "report_growth": 0.0149,
+        "manufacturer_count": 73,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "DZE",
+        "score": 0.989225,
+        "label": 0,
+        "report_count": 143880,
+        "injury_share": 0.993432,
+        "death_share": 0.0,
+        "report_growth": 0.172349,
+        "manufacturer_count": 39,
+        "reason": "report volume pushed the score upward"
+      },
+      {
+        "code": "FRN",
+        "score": 0.989205,
+        "label": 1,
+        "report_count": 51871,
+        "injury_share": 0.003952,
+        "death_share": 0.000655,
+        "report_growth": 0.124623,
+        "manufacturer_count": 49,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "CBK",
+        "score": 0.988394,
+        "label": 1,
+        "report_count": 4858,
+        "injury_share": 0.027583,
+        "death_share": 0.00494,
+        "report_growth": -0.072724,
+        "manufacturer_count": 36,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "GDW",
+        "score": 0.966009,
+        "label": 1,
+        "report_count": 3910,
+        "injury_share": 0.134015,
+        "death_share": 0.005115,
+        "report_growth": 0.133662,
+        "manufacturer_count": 29,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "BZD",
+        "score": 0.945784,
+        "label": 1,
+        "report_count": 4277,
+        "injury_share": 0.092588,
+        "death_share": 0.008651,
+        "report_growth": -0.284663,
+        "manufacturer_count": 30,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "QBJ",
+        "score": 0.495655,
+        "label": 0,
+        "report_count": 60576,
+        "injury_share": 0.017614,
+        "death_share": 0.0,
+        "report_growth": -0.129918,
+        "manufacturer_count": 6,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "LZG",
+        "score": 0.31425,
+        "label": 0,
+        "report_count": 5273,
+        "injury_share": 0.088375,
+        "death_share": 0.000759,
+        "report_growth": -0.138258,
+        "manufacturer_count": 7,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "QFG",
+        "score": 0.274546,
+        "label": 1,
+        "report_count": 45822,
+        "injury_share": 0.081707,
+        "death_share": 8.7e-05,
+        "report_growth": 0.061063,
+        "manufacturer_count": 4,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "MGB",
+        "score": 0.050805,
+        "label": 0,
+        "report_count": 3303,
+        "injury_share": 0.909173,
+        "death_share": 0.00333,
+        "report_growth": 0.087586,
+        "manufacturer_count": 13,
+        "reason": "the death share pushed the score upward"
+      }
+    ],
+    "2023 Q3": [
+      {
+        "code": "FRN",
+        "score": 0.996648,
+        "label": 1,
+        "report_count": 47079,
+        "injury_share": 0.003101,
+        "death_share": 0.00051,
+        "report_growth": -0.092383,
+        "manufacturer_count": 75,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "CBK",
+        "score": 0.992932,
+        "label": 1,
+        "report_count": 8260,
+        "injury_share": 0.01937,
+        "death_share": 0.004964,
+        "report_growth": 0.700288,
+        "manufacturer_count": 41,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "GDW",
+        "score": 0.990991,
+        "label": 1,
+        "report_count": 3645,
+        "injury_share": 0.098217,
+        "death_share": 0.005487,
+        "report_growth": -0.067775,
+        "manufacturer_count": 24,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "DTB",
+        "score": 0.986049,
+        "label": 0,
+        "report_count": 13587,
+        "injury_share": 0.310959,
+        "death_share": 0.008832,
+        "report_growth": 0.982057,
+        "manufacturer_count": 99,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "NVN",
+        "score": 0.982085,
+        "label": 0,
+        "report_count": 9873,
+        "injury_share": 0.398359,
+        "death_share": 0.005773,
+        "report_growth": 1.014076,
+        "manufacturer_count": 73,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "LZG",
+        "score": 0.980231,
+        "label": 0,
+        "report_count": 5605,
+        "injury_share": 0.072614,
+        "death_share": 0.00107,
+        "report_growth": 0.062962,
+        "manufacturer_count": 16,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "NVY",
+        "score": 0.961338,
+        "label": 0,
+        "report_count": 4524,
+        "injury_share": 0.344164,
+        "death_share": 0.007737,
+        "report_growth": 1.016942,
+        "manufacturer_count": 53,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "LWS",
+        "score": 0.924493,
+        "label": 0,
+        "report_count": 9877,
+        "injury_share": 0.456616,
+        "death_share": 0.008201,
+        "report_growth": 0.579562,
+        "manufacturer_count": 57,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "DZE",
+        "score": 0.850865,
+        "label": 1,
+        "report_count": 134124,
+        "injury_share": 0.993193,
+        "death_share": 0.0,
+        "report_growth": -0.067807,
+        "manufacturer_count": 85,
+        "reason": "report volume pushed the score upward"
+      },
+      {
+        "code": "QBJ",
+        "score": 0.619993,
+        "label": 0,
+        "report_count": 68577,
+        "injury_share": 0.016099,
+        "death_share": 0.0,
+        "report_growth": 0.132082,
+        "manufacturer_count": 8,
+        "reason": "the injury share pushed the score upward"
+      }
+    ],
+    "2023 Q4": [
+      {
+        "code": "CBK",
+        "score": 0.990697,
+        "label": 1,
+        "report_count": 6571,
+        "injury_share": 0.022371,
+        "death_share": 0.005326,
+        "report_growth": -0.204479,
+        "manufacturer_count": 39,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "FRN",
+        "score": 0.98665,
+        "label": 1,
+        "report_count": 20765,
+        "injury_share": 0.006501,
+        "death_share": 0.000963,
+        "report_growth": -0.558933,
+        "manufacturer_count": 55,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "DZE",
+        "score": 0.981737,
+        "label": 1,
+        "report_count": 136853,
+        "injury_share": 0.99376,
+        "death_share": 0.0,
+        "report_growth": 0.020347,
+        "manufacturer_count": 39,
+        "reason": "report volume pushed the score upward"
+      },
+      {
+        "code": "BZD",
+        "score": 0.96663,
+        "label": 1,
+        "report_count": 10365,
+        "injury_share": 0.11124,
+        "death_share": 0.013411,
+        "report_growth": 0.407141,
+        "manufacturer_count": 38,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "GDW",
+        "score": 0.884863,
+        "label": 1,
+        "report_count": 3619,
+        "injury_share": 0.120199,
+        "death_share": 0.007737,
+        "report_growth": -0.007133,
+        "manufacturer_count": 24,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "QBJ",
+        "score": 0.727637,
+        "label": 0,
+        "report_count": 74790,
+        "injury_share": 0.016205,
+        "death_share": 0.0,
+        "report_growth": 0.090599,
+        "manufacturer_count": 9,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "FDF",
+        "score": 0.341767,
+        "label": 1,
+        "report_count": 3540,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.37369,
+        "manufacturer_count": 9,
+        "reason": "the death share pushed the score upward"
+      },
+      {
+        "code": "DTB",
+        "score": 0.265908,
+        "label": 0,
+        "report_count": 7941,
+        "injury_share": 0.372119,
+        "death_share": 0.009319,
+        "report_growth": -0.415544,
+        "manufacturer_count": 37,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "LZG",
+        "score": 0.259339,
+        "label": 0,
+        "report_count": 4975,
+        "injury_share": 0.067136,
+        "death_share": 0.0,
+        "report_growth": -0.1124,
+        "manufacturer_count": 7,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "QLG",
+        "score": 0.220731,
+        "label": 1,
+        "report_count": 8546,
+        "injury_share": 0.305055,
+        "death_share": 0.0,
+        "report_growth": -0.241502,
+        "manufacturer_count": 9,
+        "reason": "the death share pushed the score upward"
+      }
+    ],
+    "2024 Q1": [
+      {
+        "code": "FRN",
+        "score": 0.99705,
+        "label": 1,
+        "report_count": 16850,
+        "injury_share": 0.010801,
+        "death_share": 0.002552,
+        "report_growth": -0.188538,
+        "manufacturer_count": 69,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "GDW",
+        "score": 0.99155,
+        "label": 1,
+        "report_count": 3414,
+        "injury_share": 0.094903,
+        "death_share": 0.002343,
+        "report_growth": -0.056645,
+        "manufacturer_count": 26,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "CBK",
+        "score": 0.945097,
+        "label": 1,
+        "report_count": 6741,
+        "injury_share": 0.026554,
+        "death_share": 0.006527,
+        "report_growth": 0.025871,
+        "manufacturer_count": 33,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "DZE",
+        "score": 0.903747,
+        "label": 1,
+        "report_count": 141558,
+        "injury_share": 0.995507,
+        "death_share": 0.0,
+        "report_growth": 0.03438,
+        "manufacturer_count": 57,
+        "reason": "report volume pushed the score upward"
+      },
+      {
+        "code": "BZD",
+        "score": 0.746347,
+        "label": 0,
+        "report_count": 13185,
+        "injury_share": 0.362533,
+        "death_share": 0.028593,
+        "report_growth": 0.272069,
+        "manufacturer_count": 43,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "QBJ",
+        "score": 0.501277,
+        "label": 1,
+        "report_count": 75332,
+        "injury_share": 0.020522,
+        "death_share": 0.0,
+        "report_growth": 0.007247,
+        "manufacturer_count": 8,
+        "reason": "the death share pushed the score upward"
+      },
+      {
+        "code": "FDF",
+        "score": 0.222631,
+        "label": 0,
+        "report_count": 3353,
+        "injury_share": 0.0,
+        "death_share": 0.001193,
+        "report_growth": -0.052825,
+        "manufacturer_count": 12,
+        "reason": "the death share pushed the score upward"
+      },
+      {
+        "code": "QFG",
+        "score": 0.162812,
+        "label": 1,
+        "report_count": 56133,
+        "injury_share": 0.101402,
+        "death_share": 0.00016,
+        "report_growth": 0.111149,
+        "manufacturer_count": 5,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "LZG",
+        "score": 0.139865,
+        "label": 1,
+        "report_count": 4622,
+        "injury_share": 0.075508,
+        "death_share": 0.0,
+        "report_growth": -0.070955,
+        "manufacturer_count": 7,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "FTR",
+        "score": 0.095152,
+        "label": 0,
+        "report_count": 7661,
+        "injury_share": 0.987338,
+        "death_share": 0.0,
+        "report_growth": 0.0473,
+        "manufacturer_count": 27,
+        "reason": "the death share pushed the score upward"
+      }
+    ],
+    "2024 Q2": [
+      {
+        "code": "FRN",
+        "score": 0.996992,
+        "label": 1,
+        "report_count": 14359,
+        "injury_share": 0.014346,
+        "death_share": 0.001811,
+        "report_growth": -0.147834,
+        "manufacturer_count": 73,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "FPA",
+        "score": 0.996926,
+        "label": 1,
+        "report_count": 13887,
+        "injury_share": 0.056888,
+        "death_share": 0.000288,
+        "report_growth": 3.633634,
+        "manufacturer_count": 68,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "CBK",
+        "score": 0.980821,
+        "label": 1,
+        "report_count": 4219,
+        "injury_share": 0.087699,
+        "death_share": 0.01351,
+        "report_growth": -0.374128,
+        "manufacturer_count": 40,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "GDW",
+        "score": 0.976331,
+        "label": 1,
+        "report_count": 3334,
+        "injury_share": 0.092382,
+        "death_share": 0.005399,
+        "report_growth": -0.023433,
+        "manufacturer_count": 21,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "DZE",
+        "score": 0.894262,
+        "label": 1,
+        "report_count": 157973,
+        "injury_share": 0.995385,
+        "death_share": 0.0,
+        "report_growth": 0.11596,
+        "manufacturer_count": 52,
+        "reason": "report volume pushed the score upward"
+      },
+      {
+        "code": "DTB",
+        "score": 0.775422,
+        "label": 0,
+        "report_count": 6309,
+        "injury_share": 0.430655,
+        "death_share": 0.011412,
+        "report_growth": -0.042931,
+        "manufacturer_count": 48,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "QBJ",
+        "score": 0.625692,
+        "label": 1,
+        "report_count": 81773,
+        "injury_share": 0.022929,
+        "death_share": 0.00011,
+        "report_growth": 0.085502,
+        "manufacturer_count": 6,
+        "reason": "report volume pushed the score upward"
+      },
+      {
+        "code": "OZO",
+        "score": 0.413614,
+        "label": 0,
+        "report_count": 3284,
+        "injury_share": 0.090438,
+        "death_share": 0.005786,
+        "report_growth": -0.28014,
+        "manufacturer_count": 4,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "MGB",
+        "score": 0.321231,
+        "label": 0,
+        "report_count": 3476,
+        "injury_share": 0.907652,
+        "death_share": 0.002589,
+        "report_growth": -0.029863,
+        "manufacturer_count": 23,
+        "reason": "the death share pushed the score upward"
+      },
+      {
+        "code": "PQF",
+        "score": 0.185896,
+        "label": 0,
+        "report_count": 4983,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.322101,
+        "manufacturer_count": 3,
+        "reason": "the injury share pushed the score upward"
+      }
+    ],
+    "2024 Q3": [
+      {
+        "code": "FPA",
+        "score": 0.997831,
+        "label": 1,
+        "report_count": 19124,
+        "injury_share": 0.075978,
+        "death_share": 0.0,
+        "report_growth": 0.377115,
+        "manufacturer_count": 72,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "FRN",
+        "score": 0.99745,
+        "label": 1,
+        "report_count": 12485,
+        "injury_share": 0.011053,
+        "death_share": 0.001201,
+        "report_growth": -0.13051,
+        "manufacturer_count": 92,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "DZE",
+        "score": 0.903446,
+        "label": 1,
+        "report_count": 181416,
+        "injury_share": 0.996676,
+        "death_share": 0.0,
+        "report_growth": 0.148399,
+        "manufacturer_count": 59,
+        "reason": "report volume pushed the score upward"
+      },
+      {
+        "code": "CBK",
+        "score": 0.839464,
+        "label": 1,
+        "report_count": 4482,
+        "injury_share": 0.040161,
+        "death_share": 0.009594,
+        "report_growth": 0.062337,
+        "manufacturer_count": 36,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "QBJ",
+        "score": 0.765766,
+        "label": 1,
+        "report_count": 99141,
+        "injury_share": 0.023008,
+        "death_share": 6.1e-05,
+        "report_growth": 0.212393,
+        "manufacturer_count": 11,
+        "reason": "report volume pushed the score upward"
+      },
+      {
+        "code": "GDW",
+        "score": 0.727415,
+        "label": 1,
+        "report_count": 3485,
+        "injury_share": 0.102439,
+        "death_share": 0.0066,
+        "report_growth": 0.045291,
+        "manufacturer_count": 20,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "LZG",
+        "score": 0.568378,
+        "label": 1,
+        "report_count": 5304,
+        "injury_share": 0.058069,
+        "death_share": 0.0,
+        "report_growth": 0.209854,
+        "manufacturer_count": 8,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "QFG",
+        "score": 0.482388,
+        "label": 1,
+        "report_count": 82362,
+        "injury_share": 0.099378,
+        "death_share": 0.000182,
+        "report_growth": 0.264909,
+        "manufacturer_count": 7,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "NAY",
+        "score": 0.418825,
+        "label": 1,
+        "report_count": 3291,
+        "injury_share": 0.139167,
+        "death_share": 0.006989,
+        "report_growth": -0.296795,
+        "manufacturer_count": 9,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "DTB",
+        "score": 0.188311,
+        "label": 0,
+        "report_count": 6380,
+        "injury_share": 0.434013,
+        "death_share": 0.009718,
+        "report_growth": 0.011254,
+        "manufacturer_count": 32,
+        "reason": "the manufacturer count pushed the score upward"
+      }
+    ],
+    "2024 Q4": [
+      {
+        "code": "FRN",
+        "score": 0.996951,
+        "label": 1,
+        "report_count": 14037,
+        "injury_share": 0.013251,
+        "death_share": 0.002066,
+        "report_growth": 0.124309,
+        "manufacturer_count": 89,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "FPA",
+        "score": 0.994997,
+        "label": 1,
+        "report_count": 11955,
+        "injury_share": 0.112756,
+        "death_share": 0.000502,
+        "report_growth": -0.374869,
+        "manufacturer_count": 83,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "GDW",
+        "score": 0.981007,
+        "label": 1,
+        "report_count": 3047,
+        "injury_share": 0.084345,
+        "death_share": 0.005251,
+        "report_growth": -0.125681,
+        "manufacturer_count": 24,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "QBJ",
+        "score": 0.881352,
+        "label": 1,
+        "report_count": 90871,
+        "injury_share": 0.023154,
+        "death_share": 6.6e-05,
+        "report_growth": -0.083417,
+        "manufacturer_count": 17,
+        "reason": "the death share pushed the score upward"
+      },
+      {
+        "code": "DZE",
+        "score": 0.878023,
+        "label": 1,
+        "report_count": 216155,
+        "injury_share": 0.998062,
+        "death_share": 0.0,
+        "report_growth": 0.191488,
+        "manufacturer_count": 63,
+        "reason": "report volume pushed the score upward"
+      },
+      {
+        "code": "CBK",
+        "score": 0.735717,
+        "label": 1,
+        "report_count": 4894,
+        "injury_share": 0.0,
+        "death_share": 0.004495,
+        "report_growth": 0.091923,
+        "manufacturer_count": 31,
+        "reason": "the manufacturer count pushed the score upward"
+      },
+      {
+        "code": "MGB",
+        "score": 0.61701,
+        "label": 0,
+        "report_count": 3514,
+        "injury_share": 0.866534,
+        "death_share": 0.002561,
+        "report_growth": 0.101913,
+        "manufacturer_count": 26,
+        "reason": "the death share pushed the score upward"
+      },
+      {
+        "code": "LZG",
+        "score": 0.562307,
+        "label": 1,
+        "report_count": 3918,
+        "injury_share": 0.07172,
+        "death_share": 0.0,
+        "report_growth": -0.261312,
+        "manufacturer_count": 8,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "QFG",
+        "score": 0.309026,
+        "label": 1,
+        "report_count": 69582,
+        "injury_share": 0.103274,
+        "death_share": 0.00023,
+        "report_growth": -0.155169,
+        "manufacturer_count": 8,
+        "reason": "the injury share pushed the score upward"
+      },
+      {
+        "code": "LGW",
+        "score": 0.27647,
+        "label": 0,
+        "report_count": 8045,
+        "injury_share": 0.807831,
+        "death_share": 0.000622,
+        "report_growth": 0.022756,
+        "manufacturer_count": 23,
+        "reason": "the death share pushed the score upward"
+      }
+    ]
+  },
+  "leakage_guard": "Every feature_date_max is before label_window_start for every row."
+}

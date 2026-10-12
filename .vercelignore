@@ -1,0 +1,11 @@
+.venv
+data/raw
+data/cache
+__pycache__
+.pytest_cache
+tests
+pipeline.py
+recallradar.py
+requirements.txt
+.git
+.gitignore
