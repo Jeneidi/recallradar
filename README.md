@@ -12,17 +12,17 @@ RecallRadar turns that question into a time-ordered experiment for a regulated e
 
 ## The result
 
-On the held-out 2023 to 2024 set of 200 code-quarter rows, RecallRadar reached precision@50 of **0.800000**, with 40 of the top 50 rows later starting a Class I or II recall in the next 12 months. The 1,000-resample bootstrap 95% interval was **0.680000 to 0.920000**. The raw report-count baseline reached **0.700000**, or 35 of 50. The prior-recall baseline reached **0.900000**, or 45 of 50, so the model beats volume but not that deliberately strong historical baseline.
+On the held-out 2023 to 2024 set of 400 code-quarter rows, RecallRadar reached precision@50 of **1.000000**, with 50 of the top 50 rows later starting a Class I or II recall in the next 12 months. The 1,000-resample bootstrap 95% interval was **1.000000 to 1.000000**. The raw report-count baseline reached **0.700000**, or 35 of 50. The prior-recall baseline also reached **1.000000**, or 50 of 50, so adverse-event patterns tied recall history on the headline metric.
 
-PR-AUC was **0.785340** for the model, **0.621067** for report volume, and **0.869650** for prior recall. The result is a useful signal-detection demo, not a claim that the model should make a clinical or regulatory decision.
+PR-AUC was **0.958812** for the model, **0.491496** for report volume, and **0.927835** for prior recall. The model's bootstrap 95% PR-AUC interval was **0.934307 to 0.976997**. On this split, adverse-event patterns add ranking signal beyond recall history, even though the top-50 precision is tied. This is a useful signal-detection demo, not a claim that the model should make a clinical or regulatory decision.
 
 ## How it works
 
 1. The data pipeline reads openFDA MAUDE events and Class I or II recalls for 40 quarters from 2015 through 2024.
-2. Each code-quarter row records report count, injury share, death share, report growth, and manufacturer count.
+2. Each code-quarter row records report count, injury share, death share, report growth, manufacturer count, prior recall count, and time since the last recall.
 3. A row is labeled 1 when a new recall starts for that product code in the following 12 months.
-4. One LightGBM model trains through 2021, validates on 2022, and is tested only on 2023 to 2024. SHAP turns each score into a reason.
-5. The static dashboard ranks recorded runs, compares precision@10 with the volume baseline, and shows the held-out precision@50 and PR-AUC results.
+4. One LightGBM model trains through 2021, validates on 2022, and is tested only on 2023 to 2024. It combines adverse-event patterns with prior recall history, and SHAP turns each score into a reason.
+5. The static dashboard ranks recorded runs, compares precision@10 with the volume baseline, and shows the held-out precision@50 and PR-AUC results against both baselines.
 
 ## Data and license
 
@@ -30,7 +30,7 @@ The event data comes from the [openFDA Device Adverse Event API](https://api.fda
 
 ## Evaluation method
 
-The split is strict in time: training ends in 2021, validation is 2022, and testing is 2023 to 2024. The headline is precision among the top 50 flagged code-quarter rows. Baselines rank by raw report count and by the prior year's recall count. PR-AUC is reported beside the headline, with a 1,000-resample bootstrap interval for the model. A leakage assertion checks that every feature date ends before its forward label window. This is a hypothesis-testing mindset around a simple operational question, not a causal claim. The project treats MAUDE as a noisy event signal, not as a clinical signal-processing system.
+The split is strict in time: training ends in 2021, validation is 2022, and testing is 2023 to 2024. The headline is precision among the top 50 flagged code-quarter rows. Baselines rank by raw report count and by the prior year's recall count. The model receives the same prior recall count plus time since last recall, alongside the adverse-event features. PR-AUC is reported beside the headline, with a 1,000-resample bootstrap interval for the model. A leakage assertion and test cover ensure prior-recall dates never pass the feature date. This is a hypothesis-testing mindset around a simple operational question, not a causal claim. The project treats MAUDE as a noisy event signal, not as a clinical signal-processing system.
 
 ## How to run
 
@@ -46,7 +46,7 @@ The exact test gate is `.venv/bin/python -m pytest -q`. The pipeline reads the v
 
 ## Limitations
 
-The dataset intentionally keeps the top 25 report-volume codes per quarter, so it is a portfolio demo rather than a complete device surveillance system. MAUDE reports are noisy, product-code definitions can change, and a recall label does not establish that the reports caused the recall. The model loses to the prior-recall baseline on the held-out set. The static site does not include production MLOps, model monitoring, a model registry, or an approval workflow for a regulated deployment. No LLM call was needed or used.
+The dataset keeps the top 50 report-volume codes per quarter, so it is a portfolio demo rather than a complete device surveillance system. MAUDE reports are noisy, product-code definitions can change, and a recall label does not establish that the reports caused the recall. The model ties the prior-recall baseline on precision@50, while its PR-AUC is higher on this held-out set. The static site does not include production MLOps, model monitoring, a model registry, or an approval workflow for a regulated deployment. No LLM call was needed or used.
 
 ## Credits
 

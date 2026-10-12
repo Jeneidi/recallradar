@@ -17,7 +17,7 @@ import requests
 import shap
 from sklearn.metrics import average_precision_score
 
-from recallradar import FEATURE_COLUMNS, assert_no_future_leakage, precision_at_k
+from recallradar import FEATURE_COLUMNS, assert_no_future_leakage, precision_at_k, prior_recall_features
 
 
 ROOT = Path(__file__).resolve().parent
@@ -28,7 +28,7 @@ EVENT_URL = "https://api.fda.gov/device/event.json"
 RECALL_URL = "https://api.fda.gov/device/recall.json"
 HEADERS = {"User-Agent": "RecallRadar/1.0 (portfolio research project)"}
 YEARS = range(2015, 2025)
-TOP_CODES_PER_QUARTER = 25
+TOP_CODES_PER_QUARTER = 50
 
 
 def _cache_path(url: str, params: dict[str, Any]) -> Path:
@@ -181,12 +181,14 @@ def build_features(refresh: bool = False) -> pd.DataFrame:
         label_end = end + pd.DateOffset(months=12)
         prior_start = start - pd.DateOffset(months=12)
         forward = [date for date in dates if label_start <= date <= label_end]
-        prior = [date for date in dates if prior_start <= date <= end]
+        prior_count, time_since_last_recall_days, last_recall_date = prior_recall_features(dates, end, prior_start)
         rows.append(
             {
                 **row,
                 "manufacturer_count": manufacturers[(row["quarter"], row["code"])],
-                "prior_recall_count": len(prior),
+                "prior_recall_count": prior_count,
+                "time_since_last_recall_days": time_since_last_recall_days,
+                "last_recall_date": last_recall_date,
                 "label": int(bool(forward)),
                 "label_window_start": label_start.strftime("%Y-%m-%d"),
                 "label_window_end": label_end.strftime("%Y-%m-%d"),
@@ -225,6 +227,8 @@ def shap_reason(values: np.ndarray, feature_names: list[str]) -> str:
         "death_share": "the death share pushed the score upward",
         "report_growth": "recent report growth pushed the score upward",
         "manufacturer_count": "the manufacturer count pushed the score upward",
+        "prior_recall_count": "recent recall history pushed the score upward",
+        "time_since_last_recall_days": "time since the last recall pushed the score upward",
     }
     return phrases[feature_names[index]]
 

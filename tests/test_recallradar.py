@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from recallradar import assert_no_future_leakage, precision_at_k
+from recallradar import assert_no_future_leakage, precision_at_k, prior_recall_features
 
 
 def test_precision_at_k_ranks_highest_scores_first():
@@ -32,6 +32,28 @@ def test_leakage_guard_rejects_feature_inside_label_window():
             "feature_date_max": ["2021-04-01"],
             "label_window_start": ["2021-04-01"],
             "label_window_end": ["2022-03-31"],
+        }
+    )
+    with pytest.raises(AssertionError):
+        assert_no_future_leakage(frame)
+
+
+def test_prior_recall_features_ignore_recalls_after_feature_date():
+    count, days, last_date = prior_recall_features(
+        [pd.Timestamp("2020-06-01"), pd.Timestamp("2021-03-01"), pd.Timestamp("2021-05-01")],
+        "2021-03-31",
+        "2020-04-01",
+    )
+    assert (count, days, last_date) == (2, 30, "2021-03-01")
+
+
+def test_leakage_guard_rejects_future_prior_recall_date():
+    frame = pd.DataFrame(
+        {
+            "feature_date_max": ["2021-03-31"],
+            "label_window_start": ["2021-04-01"],
+            "label_window_end": ["2022-03-31"],
+            "last_recall_date": ["2021-04-01"],
         }
     )
     with pytest.raises(AssertionError):

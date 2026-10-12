@@ -12,6 +12,8 @@ FEATURE_COLUMNS = [
     "death_share",
     "report_growth",
     "manufacturer_count",
+    "prior_recall_count",
+    "time_since_last_recall_days",
 ]
 
 
@@ -29,6 +31,22 @@ def precision_at_k(labels: np.ndarray, scores: np.ndarray, k: int) -> tuple[floa
     return hits / take, hits, take
 
 
+def prior_recall_features(
+    recall_dates: list[pd.Timestamp],
+    feature_date: str | pd.Timestamp,
+    prior_window_start: str | pd.Timestamp,
+) -> tuple[int, int, str | None]:
+    """Return prior-window count and last-recall age using dates at or before the feature date."""
+    feature_date = pd.Timestamp(feature_date)
+    prior_window_start = pd.Timestamp(prior_window_start)
+    past_dates = sorted(pd.Timestamp(date) for date in recall_dates if pd.Timestamp(date) <= feature_date)
+    prior_count = sum(prior_window_start <= date <= feature_date for date in past_dates)
+    if not past_dates:
+        return 0, -1, None
+    last_recall = past_dates[-1]
+    return prior_count, int((feature_date - last_recall).days), last_recall.strftime("%Y-%m-%d")
+
+
 def assert_no_future_leakage(frame: pd.DataFrame) -> None:
     """Ensure event features end before the forward recall-label window begins."""
     required = {"feature_date_max", "label_window_start", "label_window_end"}
@@ -42,4 +60,7 @@ def assert_no_future_leakage(frame: pd.DataFrame) -> None:
         raise AssertionError("a feature date reaches the label window")
     if bool((label_start > label_end).any()):
         raise AssertionError("a label window runs backwards")
-
+    if "last_recall_date" in frame:
+        last_recall = pd.to_datetime(frame["last_recall_date"], errors="coerce")
+        if bool((last_recall.notna() & (last_recall > feature_end)).any()):
+            raise AssertionError("a prior-recall feature uses a future recall")

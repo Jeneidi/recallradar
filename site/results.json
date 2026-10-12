@@ -3,1444 +3,1444 @@
   "recorded_with": "Python, LightGBM and SHAP",
   "recorded_date": "2026-10-12",
   "data": {
-    "rows": 1000,
+    "rows": 2000,
     "quarters": 40,
-    "unique_codes": 70,
-    "train_rows": 700,
-    "validation_rows": 100,
-    "test_rows": 200,
-    "test_positive_rows": 72,
-    "top_codes_per_quarter": 25
+    "unique_codes": 127,
+    "train_rows": 1400,
+    "validation_rows": 200,
+    "test_rows": 400,
+    "test_positive_rows": 187,
+    "top_codes_per_quarter": 50
   },
   "metrics": {
     "headline": {
       "metric": "precision_at_50",
-      "model": 0.8,
-      "model_hits": 40,
+      "model": 1.0,
+      "model_hits": 50,
       "volume_baseline": 0.7,
       "volume_hits": 35,
-      "prior_recall_baseline": 0.9,
-      "prior_recall_hits": 45,
+      "prior_recall_baseline": 1.0,
+      "prior_recall_hits": 50,
       "model_ci_95": [
-        0.68,
-        0.92
+        1.0,
+        1.0
       ]
     },
     "pr_auc": {
-      "model": 0.78534,
-      "volume_baseline": 0.621067,
-      "prior_recall_baseline": 0.86965,
+      "model": 0.958812,
+      "volume_baseline": 0.491496,
+      "prior_recall_baseline": 0.927835,
       "model_ci_95": [
-        0.69031,
-        0.862539
+        0.934307,
+        0.976997
       ]
     }
   },
   "backtest": [
     {
       "quarter": "2022 Q1",
-      "model_precision_at_10": 0.6,
+      "model_precision_at_10": 1.0,
       "volume_precision_at_10": 0.5
     },
     {
       "quarter": "2022 Q2",
-      "model_precision_at_10": 0.7,
+      "model_precision_at_10": 1.0,
       "volume_precision_at_10": 0.4
     },
     {
       "quarter": "2022 Q3",
-      "model_precision_at_10": 0.8,
+      "model_precision_at_10": 0.9,
       "volume_precision_at_10": 0.6
     },
     {
       "quarter": "2022 Q4",
-      "model_precision_at_10": 0.7,
+      "model_precision_at_10": 0.9,
       "volume_precision_at_10": 0.5
     },
     {
       "quarter": "2023 Q1",
-      "model_precision_at_10": 0.6,
+      "model_precision_at_10": 1.0,
       "volume_precision_at_10": 0.4
     },
     {
       "quarter": "2023 Q2",
-      "model_precision_at_10": 0.6,
+      "model_precision_at_10": 1.0,
       "volume_precision_at_10": 0.3
     },
     {
       "quarter": "2023 Q3",
-      "model_precision_at_10": 0.4,
+      "model_precision_at_10": 1.0,
       "volume_precision_at_10": 0.5
     },
     {
       "quarter": "2023 Q4",
-      "model_precision_at_10": 0.7,
+      "model_precision_at_10": 1.0,
       "volume_precision_at_10": 0.5
     },
     {
       "quarter": "2024 Q1",
-      "model_precision_at_10": 0.7,
+      "model_precision_at_10": 1.0,
       "volume_precision_at_10": 0.6
     },
     {
       "quarter": "2024 Q2",
-      "model_precision_at_10": 0.6,
+      "model_precision_at_10": 1.0,
       "volume_precision_at_10": 0.7
     },
     {
       "quarter": "2024 Q3",
-      "model_precision_at_10": 0.9,
+      "model_precision_at_10": 1.0,
       "volume_precision_at_10": 0.7
     },
     {
       "quarter": "2024 Q4",
-      "model_precision_at_10": 0.8,
+      "model_precision_at_10": 1.0,
       "volume_precision_at_10": 0.7
     }
   ],
   "demo_quarters": {
     "2022 Q1": [
       {
+        "code": "FPA",
+        "score": 0.999311,
+        "label": 1,
+        "report_count": 2750,
+        "injury_share": 0.034545,
+        "death_share": 0.001455,
+        "report_growth": 0.102204,
+        "manufacturer_count": 54,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "LXH",
+        "score": 0.999056,
+        "label": 1,
+        "report_count": 1153,
+        "injury_share": 0.095403,
+        "death_share": 0.0,
+        "report_growth": -0.016212,
+        "manufacturer_count": 67,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "GEI",
+        "score": 0.998878,
+        "label": 1,
+        "report_count": 1396,
+        "injury_share": 0.191977,
+        "death_share": 0.002149,
+        "report_growth": -0.006406,
+        "manufacturer_count": 80,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
         "code": "FRN",
-        "score": 0.997984,
+        "score": 0.998797,
         "label": 1,
         "report_count": 369720,
         "injury_share": 0.000495,
         "death_share": 4.6e-05,
         "report_growth": 1.977435,
         "manufacturer_count": 57,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "BZD",
-        "score": 0.995092,
+        "code": "LPH",
+        "score": 0.998706,
         "label": 1,
-        "report_count": 10104,
-        "injury_share": 0.081156,
-        "death_share": 0.003464,
-        "report_growth": 1.883562,
-        "manufacturer_count": 41,
-        "reason": "the manufacturer count pushed the score upward"
+        "report_count": 1139,
+        "injury_share": 0.904302,
+        "death_share": 0.002634,
+        "report_growth": -0.266581,
+        "manufacturer_count": 27,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "QKP",
-        "score": 0.988741,
-        "label": 0,
-        "report_count": 3320,
-        "injury_share": 0.0,
+        "code": "JWH",
+        "score": 0.998581,
+        "label": 1,
+        "report_count": 2150,
+        "injury_share": 0.788372,
         "death_share": 0.0,
-        "report_growth": -0.073143,
-        "manufacturer_count": 47,
-        "reason": "the manufacturer count pushed the score upward"
+        "report_growth": 0.04572,
+        "manufacturer_count": 35,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "CBK",
-        "score": 0.988632,
+        "score": 0.9981,
         "label": 1,
         "report_count": 3540,
         "injury_share": 0.053107,
         "death_share": 0.009322,
         "report_growth": 0.034483,
         "manufacturer_count": 40,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "FMI",
+        "score": 0.997384,
+        "label": 1,
+        "report_count": 1090,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": -0.061154,
+        "manufacturer_count": 58,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "FMF",
+        "score": 0.987347,
+        "label": 1,
+        "report_count": 1476,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.237217,
+        "manufacturer_count": 45,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "DZE",
-        "score": 0.982831,
+        "score": 0.987028,
         "label": 1,
         "report_count": 113252,
         "injury_share": 0.992601,
         "death_share": 0.0,
         "report_growth": -0.059478,
         "manufacturer_count": 38,
-        "reason": "report volume pushed the score upward"
-      },
-      {
-        "code": "LZG",
-        "score": 0.878372,
-        "label": 1,
-        "report_count": 7213,
-        "injury_share": 0.089145,
-        "death_share": 0.001664,
-        "report_growth": -0.079505,
-        "manufacturer_count": 8,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "MDS",
-        "score": 0.563046,
-        "label": 0,
-        "report_count": 5152,
-        "injury_share": 0.0,
-        "death_share": 0.0,
-        "report_growth": 1.508277,
-        "manufacturer_count": 11,
-        "reason": "the death share pushed the score upward"
-      },
-      {
-        "code": "GDW",
-        "score": 0.171637,
-        "label": 1,
-        "report_count": 3024,
-        "injury_share": 0.191799,
-        "death_share": 0.007606,
-        "report_growth": -0.08113,
-        "manufacturer_count": 28,
-        "reason": "report volume pushed the score upward"
-      },
-      {
-        "code": "QBJ",
-        "score": 0.140057,
-        "label": 0,
-        "report_count": 48624,
-        "injury_share": 0.00619,
-        "death_share": 0.0,
-        "report_growth": -0.209816,
-        "manufacturer_count": 6,
-        "reason": "the death share pushed the score upward"
-      },
-      {
-        "code": "OZP",
-        "score": 0.139669,
-        "label": 0,
-        "report_count": 37119,
-        "injury_share": 0.086209,
-        "death_share": 0.000916,
-        "report_growth": 1.15758,
-        "manufacturer_count": 3,
-        "reason": "the injury share pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       }
     ],
     "2022 Q2": [
       {
-        "code": "BZD",
-        "score": 0.996596,
+        "code": "LXH",
+        "score": 0.998939,
         "label": 1,
-        "report_count": 34785,
-        "injury_share": 0.034986,
-        "death_share": 0.001495,
-        "report_growth": 2.442696,
-        "manufacturer_count": 42,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "FRN",
-        "score": 0.996403,
-        "label": 1,
-        "report_count": 373076,
-        "injury_share": 0.000684,
-        "death_share": 5.4e-05,
-        "report_growth": 0.009077,
-        "manufacturer_count": 52,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "FPA",
-        "score": 0.994929,
-        "label": 1,
-        "report_count": 3730,
-        "injury_share": 0.036461,
+        "report_count": 1319,
+        "injury_share": 0.091736,
         "death_share": 0.0,
-        "report_growth": 0.49499,
-        "manufacturer_count": 59,
-        "reason": "the manufacturer count pushed the score upward"
+        "report_growth": 0.143972,
+        "manufacturer_count": 66,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "JWH",
+        "score": 0.998824,
+        "label": 1,
+        "report_count": 2148,
+        "injury_share": 0.787709,
+        "death_share": 0.0,
+        "report_growth": -0.00093,
+        "manufacturer_count": 31,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "CBK",
-        "score": 0.994038,
+        "score": 0.998808,
         "label": 1,
         "report_count": 3515,
         "injury_share": 0.04808,
         "death_share": 0.009388,
         "report_growth": -0.007062,
         "manufacturer_count": 43,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "DZE",
-        "score": 0.986976,
+        "code": "FPA",
+        "score": 0.998752,
         "label": 1,
-        "report_count": 116641,
-        "injury_share": 0.991958,
+        "report_count": 3730,
+        "injury_share": 0.036461,
         "death_share": 0.0,
-        "report_growth": 0.029924,
-        "manufacturer_count": 36,
-        "reason": "report volume pushed the score upward"
+        "report_growth": 0.356364,
+        "manufacturer_count": 59,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "QKP",
-        "score": 0.983709,
-        "label": 0,
-        "report_count": 6071,
+        "code": "LPH",
+        "score": 0.998171,
+        "label": 1,
+        "report_count": 1396,
+        "injury_share": 0.899713,
+        "death_share": 0.0,
+        "report_growth": 0.225637,
+        "manufacturer_count": 31,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "GEI",
+        "score": 0.998004,
+        "label": 1,
+        "report_count": 1625,
+        "injury_share": 0.233231,
+        "death_share": 0.006769,
+        "report_growth": 0.16404,
+        "manufacturer_count": 96,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "FRN",
+        "score": 0.997725,
+        "label": 1,
+        "report_count": 373076,
+        "injury_share": 0.000684,
+        "death_share": 5.4e-05,
+        "report_growth": 0.009077,
+        "manufacturer_count": 52,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "BZD",
+        "score": 0.995316,
+        "label": 1,
+        "report_count": 34785,
+        "injury_share": 0.034986,
+        "death_share": 0.001495,
+        "report_growth": 2.442696,
+        "manufacturer_count": 42,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "FMF",
+        "score": 0.990249,
+        "label": 1,
+        "report_count": 1096,
         "injury_share": 0.0,
         "death_share": 0.0,
-        "report_growth": 0.828614,
-        "manufacturer_count": 39,
-        "reason": "the manufacturer count pushed the score upward"
+        "report_growth": -0.257453,
+        "manufacturer_count": 43,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "LZG",
-        "score": 0.960387,
+        "code": "NBW",
+        "score": 0.98611,
         "label": 1,
-        "report_count": 7059,
-        "injury_share": 0.089673,
-        "death_share": 0.000992,
-        "report_growth": -0.02135,
-        "manufacturer_count": 10,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "FTL",
-        "score": 0.659456,
-        "label": 1,
-        "report_count": 3255,
-        "injury_share": 0.974808,
-        "death_share": 0.006144,
-        "report_growth": -0.131073,
-        "manufacturer_count": 24,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "QBJ",
-        "score": 0.320838,
-        "label": 0,
-        "report_count": 59427,
-        "injury_share": 0.00525,
+        "report_count": 1853,
+        "injury_share": 0.11279,
         "death_share": 0.0,
-        "report_growth": 0.222174,
-        "manufacturer_count": 8,
-        "reason": "the death share pushed the score upward"
-      },
-      {
-        "code": "OYC",
-        "score": 0.20103,
-        "label": 0,
-        "report_count": 20396,
-        "injury_share": 0.016131,
-        "death_share": 0.000392,
-        "report_growth": 0.099811,
-        "manufacturer_count": 4,
-        "reason": "the injury share pushed the score upward"
+        "report_growth": -0.185495,
+        "manufacturer_count": 18,
+        "reason": "time since the last recall pushed the score upward"
       }
     ],
     "2022 Q3": [
       {
-        "code": "FRN",
-        "score": 0.994941,
-        "label": 1,
-        "report_count": 92548,
-        "injury_share": 0.002669,
-        "death_share": 0.00027,
-        "report_growth": -0.751933,
-        "manufacturer_count": 49,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
         "code": "FPA",
-        "score": 0.993364,
+        "score": 0.999235,
         "label": 1,
         "report_count": 4230,
         "injury_share": 0.026714,
         "death_share": 0.000709,
         "report_growth": 0.134048,
         "manufacturer_count": 52,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "BZD",
-        "score": 0.990962,
-        "label": 1,
-        "report_count": 33982,
-        "injury_share": 0.058678,
-        "death_share": 0.003855,
-        "report_growth": -0.023085,
-        "manufacturer_count": 43,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "CBK",
-        "score": 0.987101,
+        "score": 0.998962,
         "label": 1,
         "report_count": 4018,
         "injury_share": 0.03335,
         "death_share": 0.006969,
         "report_growth": 0.143101,
         "manufacturer_count": 47,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "DZE",
-        "score": 0.986976,
+        "code": "JWH",
+        "score": 0.998486,
         "label": 1,
-        "report_count": 119887,
-        "injury_share": 0.993327,
+        "report_count": 2128,
+        "injury_share": 0.804511,
         "death_share": 0.0,
-        "report_growth": 0.027829,
-        "manufacturer_count": 37,
-        "reason": "report volume pushed the score upward"
+        "report_growth": -0.009311,
+        "manufacturer_count": 33,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "GDW",
-        "score": 0.930619,
+        "code": "GEI",
+        "score": 0.998161,
         "label": 1,
-        "report_count": 3459,
-        "injury_share": 0.221162,
-        "death_share": 0.004626,
-        "report_growth": -0.013124,
-        "manufacturer_count": 32,
-        "reason": "the manufacturer count pushed the score upward"
+        "report_count": 1520,
+        "injury_share": 0.207237,
+        "death_share": 0.006579,
+        "report_growth": -0.064615,
+        "manufacturer_count": 92,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "LZG",
-        "score": 0.854833,
+        "code": "FMI",
+        "score": 0.997494,
         "label": 1,
-        "report_count": 7943,
-        "injury_share": 0.093667,
-        "death_share": 0.000378,
-        "report_growth": 0.12523,
-        "manufacturer_count": 9,
-        "reason": "the injury share pushed the score upward"
+        "report_count": 1230,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.12844,
+        "manufacturer_count": 53,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "LWS",
-        "score": 0.258659,
-        "label": 0,
-        "report_count": 5183,
-        "injury_share": 0.669303,
-        "death_share": 0.005209,
-        "report_growth": -0.293195,
-        "manufacturer_count": 24,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "QFG",
-        "score": 0.192761,
+        "code": "FRN",
+        "score": 0.995879,
         "label": 1,
-        "report_count": 34568,
-        "injury_share": 0.083112,
-        "death_share": 0.000174,
-        "report_growth": 0.125297,
+        "report_count": 92548,
+        "injury_share": 0.002669,
+        "death_share": 0.00027,
+        "report_growth": -0.751933,
+        "manufacturer_count": 49,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "BZD",
+        "score": 0.995108,
+        "label": 1,
+        "report_count": 33982,
+        "injury_share": 0.058678,
+        "death_share": 0.003855,
+        "report_growth": -0.023085,
+        "manufacturer_count": 43,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "FMF",
+        "score": 0.988427,
+        "label": 1,
+        "report_count": 1373,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.252737,
+        "manufacturer_count": 44,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "NAY",
+        "score": 0.986181,
+        "label": 1,
+        "report_count": 1489,
+        "injury_share": 0.216924,
+        "death_share": 0.010074,
+        "report_growth": -0.098122,
         "manufacturer_count": 5,
-        "reason": "the injury share pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "QBJ",
-        "score": 0.082445,
+        "code": "GAM",
+        "score": 0.982773,
         "label": 0,
-        "report_count": 61371,
-        "injury_share": 0.006827,
-        "death_share": 0.0,
-        "report_growth": 0.032712,
-        "manufacturer_count": 7,
-        "reason": "the death share pushed the score upward"
+        "report_count": 1438,
+        "injury_share": 0.223922,
+        "death_share": 0.00765,
+        "report_growth": 0.235395,
+        "manufacturer_count": 12,
+        "reason": "time since the last recall pushed the score upward"
       }
     ],
     "2022 Q4": [
       {
+        "code": "GEI",
+        "score": 0.999357,
+        "label": 1,
+        "report_count": 1562,
+        "injury_share": 0.191421,
+        "death_share": 0.005122,
+        "report_growth": 0.027632,
+        "manufacturer_count": 100,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
         "code": "FPA",
-        "score": 0.995532,
+        "score": 0.999336,
         "label": 1,
         "report_count": 2683,
         "injury_share": 0.039881,
         "death_share": 0.001864,
         "report_growth": -0.365721,
         "manufacturer_count": 79,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "FRN",
-        "score": 0.993778,
-        "label": 1,
-        "report_count": 52676,
-        "injury_share": 0.003873,
-        "death_share": 0.000418,
-        "report_growth": -0.430825,
-        "manufacturer_count": 68,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "CBK",
-        "score": 0.992841,
+        "score": 0.999233,
         "label": 1,
         "report_count": 4901,
         "injury_share": 0.032442,
         "death_share": 0.006121,
         "report_growth": 0.219761,
         "manufacturer_count": 51,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "JWH",
+        "score": 0.998857,
+        "label": 1,
+        "report_count": 1936,
+        "injury_share": 0.804752,
+        "death_share": 0.00155,
+        "report_growth": -0.090226,
+        "manufacturer_count": 33,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "OWB",
+        "score": 0.998614,
+        "label": 1,
+        "report_count": 1586,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.852804,
+        "manufacturer_count": 15,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "DSP",
+        "score": 0.998007,
+        "label": 1,
+        "report_count": 1442,
+        "injury_share": 0.0,
+        "death_share": 0.006241,
+        "report_growth": 0.064993,
+        "manufacturer_count": 9,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "HWC",
+        "score": 0.997975,
+        "label": 0,
+        "report_count": 1308,
+        "injury_share": 0.745413,
+        "death_share": 0.0,
+        "report_growth": 0.081886,
+        "manufacturer_count": 44,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "LXH",
+        "score": 0.99776,
+        "label": 1,
+        "report_count": 1310,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": -0.006823,
+        "manufacturer_count": 58,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "BZD",
-        "score": 0.984927,
+        "score": 0.99549,
         "label": 1,
         "report_count": 11897,
         "injury_share": 0.064638,
         "death_share": 0.007985,
         "report_growth": -0.649903,
         "manufacturer_count": 49,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "DZE",
-        "score": 0.984619,
+        "code": "FRN",
+        "score": 0.993586,
         "label": 1,
-        "report_count": 133444,
-        "injury_share": 0.992356,
-        "death_share": 2.2e-05,
-        "report_growth": 0.113081,
-        "manufacturer_count": 32,
-        "reason": "report volume pushed the score upward"
-      },
-      {
-        "code": "LZG",
-        "score": 0.984471,
-        "label": 0,
-        "report_count": 6010,
-        "injury_share": 0.093012,
-        "death_share": 0.001165,
-        "report_growth": -0.243359,
-        "manufacturer_count": 12,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "QBJ",
-        "score": 0.656119,
-        "label": 0,
-        "report_count": 62866,
-        "injury_share": 0.008765,
-        "death_share": 0.0,
-        "report_growth": 0.02436,
-        "manufacturer_count": 5,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "FDF",
-        "score": 0.285334,
-        "label": 1,
-        "report_count": 2577,
-        "injury_share": 0.0,
-        "death_share": 0.0,
-        "report_growth": 2577.0,
-        "manufacturer_count": 9,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "QFG",
-        "score": 0.192761,
-        "label": 1,
-        "report_count": 39082,
-        "injury_share": 0.079909,
-        "death_share": 0.000154,
-        "report_growth": 0.130583,
-        "manufacturer_count": 5,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "FTR",
-        "score": 0.075116,
-        "label": 0,
-        "report_count": 8725,
-        "injury_share": 0.992779,
-        "death_share": 0.0,
-        "report_growth": 0.153948,
-        "manufacturer_count": 31,
-        "reason": "the manufacturer count pushed the score upward"
+        "report_count": 52676,
+        "injury_share": 0.003873,
+        "death_share": 0.000418,
+        "report_growth": -0.430825,
+        "manufacturer_count": 68,
+        "reason": "time since the last recall pushed the score upward"
       }
     ],
     "2023 Q1": [
       {
-        "code": "FRN",
-        "score": 0.993631,
-        "label": 1,
-        "report_count": 46123,
-        "injury_share": 0.005442,
-        "death_share": 0.000304,
-        "report_growth": -0.124402,
-        "manufacturer_count": 63,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
         "code": "FPA",
-        "score": 0.988486,
+        "score": 0.999328,
         "label": 1,
         "report_count": 2953,
         "injury_share": 0.0,
         "death_share": 0.0,
         "report_growth": 0.100634,
         "manufacturer_count": 66,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "GEI",
+        "score": 0.999313,
+        "label": 1,
+        "report_count": 1760,
+        "injury_share": 0.194886,
+        "death_share": 0.002273,
+        "report_growth": 0.126761,
+        "manufacturer_count": 99,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "OWB",
+        "score": 0.998603,
+        "label": 1,
+        "report_count": 2012,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.2686,
+        "manufacturer_count": 11,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "CBK",
-        "score": 0.982694,
+        "score": 0.998439,
         "label": 1,
         "report_count": 5239,
         "injury_share": 0.036648,
         "death_share": 0.006108,
         "report_growth": 0.068966,
         "manufacturer_count": 39,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "BZD",
-        "score": 0.907241,
+        "code": "JWH",
+        "score": 0.998385,
         "label": 1,
-        "report_count": 5979,
-        "injury_share": 0.057367,
-        "death_share": 0.007359,
-        "report_growth": -0.497436,
-        "manufacturer_count": 31,
-        "reason": "the injury share pushed the score upward"
+        "report_count": 2239,
+        "injury_share": 0.787405,
+        "death_share": 0.0,
+        "report_growth": 0.156508,
+        "manufacturer_count": 33,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "GDW",
-        "score": 0.899525,
+        "code": "FRN",
+        "score": 0.998058,
         "label": 1,
-        "report_count": 3449,
-        "injury_share": 0.172224,
-        "death_share": 0.004059,
-        "report_growth": -0.046447,
-        "manufacturer_count": 26,
-        "reason": "the injury share pushed the score upward"
+        "report_count": 46123,
+        "injury_share": 0.005442,
+        "death_share": 0.000304,
+        "report_growth": -0.124402,
+        "manufacturer_count": 63,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "DSP",
+        "score": 0.998011,
+        "label": 1,
+        "report_count": 2130,
+        "injury_share": 0.0,
+        "death_share": 0.012207,
+        "report_growth": 0.477115,
+        "manufacturer_count": 11,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "LXH",
+        "score": 0.996163,
+        "label": 1,
+        "report_count": 1549,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.182443,
+        "manufacturer_count": 56,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "FMF",
+        "score": 0.995653,
+        "label": 1,
+        "report_count": 1505,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.168478,
+        "manufacturer_count": 46,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "DZE",
-        "score": 0.875574,
+        "score": 0.990729,
         "label": 1,
         "report_count": 122728,
         "injury_share": 0.992667,
         "death_share": 0.0,
         "report_growth": -0.080303,
         "manufacturer_count": 45,
-        "reason": "report volume pushed the score upward"
-      },
-      {
-        "code": "QBJ",
-        "score": 0.825722,
-        "label": 0,
-        "report_count": 69621,
-        "injury_share": 0.010816,
-        "death_share": 0.0,
-        "report_growth": 0.107451,
-        "manufacturer_count": 6,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "LZG",
-        "score": 0.429736,
-        "label": 0,
-        "report_count": 6119,
-        "injury_share": 0.087923,
-        "death_share": 0.001144,
-        "report_growth": 0.018136,
-        "manufacturer_count": 7,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "MDS",
-        "score": 0.412306,
-        "label": 0,
-        "report_count": 10368,
-        "injury_share": 0.0,
-        "death_share": 0.0,
-        "report_growth": 1.012422,
-        "manufacturer_count": 8,
-        "reason": "the death share pushed the score upward"
-      },
-      {
-        "code": "OZO",
-        "score": 0.211844,
-        "label": 0,
-        "report_count": 8586,
-        "injury_share": 0.095737,
-        "death_share": 0.005474,
-        "report_growth": 0.009999,
-        "manufacturer_count": 3,
-        "reason": "the injury share pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       }
     ],
     "2023 Q2": [
       {
+        "code": "GEI",
+        "score": 0.999312,
+        "label": 1,
+        "report_count": 1772,
+        "injury_share": 0.217833,
+        "death_share": 0.0,
+        "report_growth": 0.006818,
+        "manufacturer_count": 99,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
         "code": "FPA",
-        "score": 0.995428,
+        "score": 0.999195,
         "label": 1,
         "report_count": 2997,
         "injury_share": 0.039373,
         "death_share": 0.002336,
         "report_growth": 0.0149,
         "manufacturer_count": 73,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "DZE",
-        "score": 0.989225,
-        "label": 0,
-        "report_count": 143880,
-        "injury_share": 0.993432,
-        "death_share": 0.0,
-        "report_growth": 0.172349,
-        "manufacturer_count": 39,
-        "reason": "report volume pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "FRN",
-        "score": 0.989205,
+        "score": 0.999037,
         "label": 1,
         "report_count": 51871,
         "injury_share": 0.003952,
         "death_share": 0.000655,
         "report_growth": 0.124623,
         "manufacturer_count": 49,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "OWB",
+        "score": 0.998537,
+        "label": 1,
+        "report_count": 1938,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": -0.036779,
+        "manufacturer_count": 10,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "JWH",
+        "score": 0.998054,
+        "label": 1,
+        "report_count": 2352,
+        "injury_share": 0.83801,
+        "death_share": 0.0,
+        "report_growth": 0.050469,
+        "manufacturer_count": 32,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "DSP",
+        "score": 0.998033,
+        "label": 1,
+        "report_count": 1685,
+        "injury_share": 0.0,
+        "death_share": 0.005935,
+        "report_growth": -0.20892,
+        "manufacturer_count": 14,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "CBK",
-        "score": 0.988394,
+        "score": 0.997916,
         "label": 1,
         "report_count": 4858,
         "injury_share": 0.027583,
         "death_share": 0.00494,
         "report_growth": -0.072724,
         "manufacturer_count": 36,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "GDW",
-        "score": 0.966009,
+        "code": "LXH",
+        "score": 0.997115,
         "label": 1,
-        "report_count": 3910,
-        "injury_share": 0.134015,
-        "death_share": 0.005115,
-        "report_growth": 0.133662,
-        "manufacturer_count": 29,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "BZD",
-        "score": 0.945784,
-        "label": 1,
-        "report_count": 4277,
-        "injury_share": 0.092588,
-        "death_share": 0.008651,
-        "report_growth": -0.284663,
-        "manufacturer_count": 30,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "QBJ",
-        "score": 0.495655,
-        "label": 0,
-        "report_count": 60576,
-        "injury_share": 0.017614,
+        "report_count": 1167,
+        "injury_share": 0.0,
         "death_share": 0.0,
-        "report_growth": -0.129918,
-        "manufacturer_count": 6,
-        "reason": "the injury share pushed the score upward"
+        "report_growth": -0.246611,
+        "manufacturer_count": 59,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "LZG",
-        "score": 0.31425,
-        "label": 0,
-        "report_count": 5273,
-        "injury_share": 0.088375,
-        "death_share": 0.000759,
-        "report_growth": -0.138258,
-        "manufacturer_count": 7,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "QFG",
-        "score": 0.274546,
+        "code": "GCJ",
+        "score": 0.996804,
         "label": 1,
-        "report_count": 45822,
-        "injury_share": 0.081707,
-        "death_share": 8.7e-05,
-        "report_growth": 0.061063,
-        "manufacturer_count": 4,
-        "reason": "the injury share pushed the score upward"
+        "report_count": 1591,
+        "injury_share": 0.075424,
+        "death_share": 0.0,
+        "report_growth": 0.628454,
+        "manufacturer_count": 43,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "MGB",
-        "score": 0.050805,
-        "label": 0,
-        "report_count": 3303,
-        "injury_share": 0.909173,
-        "death_share": 0.00333,
-        "report_growth": 0.087586,
-        "manufacturer_count": 13,
-        "reason": "the death share pushed the score upward"
+        "code": "FMF",
+        "score": 0.995564,
+        "label": 1,
+        "report_count": 1247,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": -0.171429,
+        "manufacturer_count": 46,
+        "reason": "time since the last recall pushed the score upward"
       }
     ],
     "2023 Q3": [
       {
+        "code": "FPA",
+        "score": 0.999361,
+        "label": 1,
+        "report_count": 2612,
+        "injury_share": 0.050536,
+        "death_share": 0.001914,
+        "report_growth": -0.128462,
+        "manufacturer_count": 75,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "GCJ",
+        "score": 0.999334,
+        "label": 1,
+        "report_count": 1549,
+        "injury_share": 0.0,
+        "death_share": 0.003228,
+        "report_growth": -0.026398,
+        "manufacturer_count": 53,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "GEI",
+        "score": 0.999183,
+        "label": 1,
+        "report_count": 1775,
+        "injury_share": 0.188169,
+        "death_share": 0.00338,
+        "report_growth": 0.001693,
+        "manufacturer_count": 100,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
         "code": "FRN",
-        "score": 0.996648,
+        "score": 0.999095,
         "label": 1,
         "report_count": 47079,
         "injury_share": 0.003101,
         "death_share": 0.00051,
         "report_growth": -0.092383,
         "manufacturer_count": 75,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "EOQ",
+        "score": 0.998959,
+        "label": 1,
+        "report_count": 1336,
+        "injury_share": 0.106287,
+        "death_share": 0.006737,
+        "report_growth": 0.09329,
+        "manufacturer_count": 21,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "JWH",
+        "score": 0.99895,
+        "label": 1,
+        "report_count": 2063,
+        "injury_share": 0.852157,
+        "death_share": 0.0,
+        "report_growth": -0.122874,
+        "manufacturer_count": 43,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "CBK",
-        "score": 0.992932,
+        "score": 0.998439,
         "label": 1,
         "report_count": 8260,
         "injury_share": 0.01937,
         "death_share": 0.004964,
         "report_growth": 0.700288,
         "manufacturer_count": 41,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "GDW",
-        "score": 0.990991,
+        "code": "DSP",
+        "score": 0.998152,
         "label": 1,
-        "report_count": 3645,
-        "injury_share": 0.098217,
-        "death_share": 0.005487,
-        "report_growth": -0.067775,
-        "manufacturer_count": 24,
-        "reason": "the injury share pushed the score upward"
+        "report_count": 1569,
+        "injury_share": 0.0,
+        "death_share": 0.011472,
+        "report_growth": -0.068843,
+        "manufacturer_count": 10,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "DTB",
-        "score": 0.986049,
-        "label": 0,
-        "report_count": 13587,
-        "injury_share": 0.310959,
-        "death_share": 0.008832,
-        "report_growth": 0.982057,
-        "manufacturer_count": 99,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "NVN",
-        "score": 0.982085,
-        "label": 0,
-        "report_count": 9873,
-        "injury_share": 0.398359,
-        "death_share": 0.005773,
-        "report_growth": 1.014076,
-        "manufacturer_count": 73,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "LZG",
-        "score": 0.980231,
-        "label": 0,
-        "report_count": 5605,
-        "injury_share": 0.072614,
-        "death_share": 0.00107,
-        "report_growth": 0.062962,
-        "manufacturer_count": 16,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "NVY",
-        "score": 0.961338,
-        "label": 0,
-        "report_count": 4524,
-        "injury_share": 0.344164,
-        "death_share": 0.007737,
-        "report_growth": 1.016942,
-        "manufacturer_count": 53,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "LWS",
-        "score": 0.924493,
-        "label": 0,
-        "report_count": 9877,
-        "injury_share": 0.456616,
-        "death_share": 0.008201,
-        "report_growth": 0.579562,
-        "manufacturer_count": 57,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "DZE",
-        "score": 0.850865,
+        "code": "OWB",
+        "score": 0.998079,
         "label": 1,
-        "report_count": 134124,
-        "injury_share": 0.993193,
+        "report_count": 1754,
+        "injury_share": 0.0,
         "death_share": 0.0,
-        "report_growth": -0.067807,
-        "manufacturer_count": 85,
-        "reason": "report volume pushed the score upward"
+        "report_growth": -0.094943,
+        "manufacturer_count": 20,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "QBJ",
-        "score": 0.619993,
-        "label": 0,
-        "report_count": 68577,
-        "injury_share": 0.016099,
+        "code": "FMI",
+        "score": 0.996748,
+        "label": 1,
+        "report_count": 1354,
+        "injury_share": 0.0,
         "death_share": 0.0,
-        "report_growth": 0.132082,
-        "manufacturer_count": 8,
-        "reason": "the injury share pushed the score upward"
+        "report_growth": -0.002211,
+        "manufacturer_count": 59,
+        "reason": "time since the last recall pushed the score upward"
       }
     ],
     "2023 Q4": [
       {
-        "code": "CBK",
-        "score": 0.990697,
+        "code": "FPA",
+        "score": 0.999334,
         "label": 1,
-        "report_count": 6571,
-        "injury_share": 0.022371,
-        "death_share": 0.005326,
-        "report_growth": -0.204479,
-        "manufacturer_count": 39,
-        "reason": "the manufacturer count pushed the score upward"
+        "report_count": 2354,
+        "injury_share": 0.0,
+        "death_share": 0.005523,
+        "report_growth": -0.098775,
+        "manufacturer_count": 62,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "GEI",
+        "score": 0.999232,
+        "label": 1,
+        "report_count": 1869,
+        "injury_share": 0.192081,
+        "death_share": 0.004815,
+        "report_growth": 0.052958,
+        "manufacturer_count": 99,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "GCJ",
+        "score": 0.998969,
+        "label": 1,
+        "report_count": 1741,
+        "injury_share": 0.0,
+        "death_share": 0.002298,
+        "report_growth": 0.123951,
+        "manufacturer_count": 45,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "FRN",
-        "score": 0.98665,
+        "score": 0.998799,
         "label": 1,
         "report_count": 20765,
         "injury_share": 0.006501,
         "death_share": 0.000963,
         "report_growth": -0.558933,
         "manufacturer_count": 55,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "DZE",
-        "score": 0.981737,
+        "code": "CBK",
+        "score": 0.998773,
         "label": 1,
-        "report_count": 136853,
-        "injury_share": 0.99376,
-        "death_share": 0.0,
-        "report_growth": 0.020347,
+        "report_count": 6571,
+        "injury_share": 0.022371,
+        "death_share": 0.005326,
+        "report_growth": -0.204479,
         "manufacturer_count": 39,
-        "reason": "report volume pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "BZD",
-        "score": 0.96663,
+        "code": "EOQ",
+        "score": 0.998291,
         "label": 1,
-        "report_count": 10365,
-        "injury_share": 0.11124,
-        "death_share": 0.013411,
-        "report_growth": 0.407141,
-        "manufacturer_count": 38,
-        "reason": "the injury share pushed the score upward"
+        "report_count": 1392,
+        "injury_share": 0.106322,
+        "death_share": 0.002874,
+        "report_growth": 0.041916,
+        "manufacturer_count": 16,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "GDW",
-        "score": 0.884863,
+        "code": "JWH",
+        "score": 0.998223,
         "label": 1,
-        "report_count": 3619,
-        "injury_share": 0.120199,
-        "death_share": 0.007737,
-        "report_growth": -0.007133,
-        "manufacturer_count": 24,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "QBJ",
-        "score": 0.727637,
-        "label": 0,
-        "report_count": 74790,
-        "injury_share": 0.016205,
+        "report_count": 2293,
+        "injury_share": 0.80942,
         "death_share": 0.0,
-        "report_growth": 0.090599,
-        "manufacturer_count": 9,
-        "reason": "the injury share pushed the score upward"
+        "report_growth": 0.111488,
+        "manufacturer_count": 33,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "FDF",
-        "score": 0.341767,
+        "code": "DSP",
+        "score": 0.997852,
         "label": 1,
-        "report_count": 3540,
+        "report_count": 1596,
         "injury_share": 0.0,
-        "death_share": 0.0,
-        "report_growth": 0.37369,
-        "manufacturer_count": 9,
-        "reason": "the death share pushed the score upward"
+        "death_share": 0.004386,
+        "report_growth": 0.017208,
+        "manufacturer_count": 14,
+        "reason": "recent recall history pushed the score upward"
       },
       {
-        "code": "DTB",
-        "score": 0.265908,
-        "label": 0,
-        "report_count": 7941,
-        "injury_share": 0.372119,
-        "death_share": 0.009319,
-        "report_growth": -0.415544,
-        "manufacturer_count": 37,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "LZG",
-        "score": 0.259339,
-        "label": 0,
-        "report_count": 4975,
-        "injury_share": 0.067136,
-        "death_share": 0.0,
-        "report_growth": -0.1124,
-        "manufacturer_count": 7,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "QLG",
-        "score": 0.220731,
+        "code": "OWB",
+        "score": 0.997762,
         "label": 1,
-        "report_count": 8546,
-        "injury_share": 0.305055,
-        "death_share": 0.0,
-        "report_growth": -0.241502,
-        "manufacturer_count": 9,
-        "reason": "the death share pushed the score upward"
+        "report_count": 1900,
+        "injury_share": 0.0,
+        "death_share": 0.002105,
+        "report_growth": 0.083238,
+        "manufacturer_count": 16,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "NAY",
+        "score": 0.976197,
+        "label": 1,
+        "report_count": 2547,
+        "injury_share": 0.146054,
+        "death_share": 0.00746,
+        "report_growth": 0.320373,
+        "manufacturer_count": 7,
+        "reason": "time since the last recall pushed the score upward"
       }
     ],
     "2024 Q1": [
       {
+        "code": "GCJ",
+        "score": 0.999361,
+        "label": 1,
+        "report_count": 1725,
+        "injury_share": 0.0,
+        "death_share": 0.002319,
+        "report_growth": -0.00919,
+        "manufacturer_count": 52,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "GEI",
+        "score": 0.999324,
+        "label": 1,
+        "report_count": 2197,
+        "injury_share": 0.13564,
+        "death_share": 0.002731,
+        "report_growth": 0.175495,
+        "manufacturer_count": 99,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
         "code": "FRN",
-        "score": 0.99705,
+        "score": 0.99919,
         "label": 1,
         "report_count": 16850,
         "injury_share": 0.010801,
         "death_share": 0.002552,
         "report_growth": -0.188538,
         "manufacturer_count": 69,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "GDW",
-        "score": 0.99155,
+        "code": "JWH",
+        "score": 0.998808,
         "label": 1,
-        "report_count": 3414,
-        "injury_share": 0.094903,
-        "death_share": 0.002343,
-        "report_growth": -0.056645,
-        "manufacturer_count": 26,
-        "reason": "the injury share pushed the score upward"
+        "report_count": 2188,
+        "injury_share": 0.826325,
+        "death_share": 0.00457,
+        "report_growth": -0.045792,
+        "manufacturer_count": 32,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "FPA",
+        "score": 0.998687,
+        "label": 1,
+        "report_count": 2243,
+        "injury_share": 0.062416,
+        "death_share": 0.0,
+        "report_growth": -0.047154,
+        "manufacturer_count": 62,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "OWB",
+        "score": 0.998537,
+        "label": 1,
+        "report_count": 2031,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.068947,
+        "manufacturer_count": 12,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "EOQ",
+        "score": 0.998499,
+        "label": 1,
+        "report_count": 1466,
+        "injury_share": 0.093452,
+        "death_share": 0.004775,
+        "report_growth": 0.053161,
+        "manufacturer_count": 16,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "LXH",
+        "score": 0.997846,
+        "label": 1,
+        "report_count": 1394,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.194516,
+        "manufacturer_count": 61,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "CBK",
-        "score": 0.945097,
+        "score": 0.996913,
         "label": 1,
         "report_count": 6741,
         "injury_share": 0.026554,
         "death_share": 0.006527,
         "report_growth": 0.025871,
         "manufacturer_count": 33,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "DZE",
-        "score": 0.903747,
+        "code": "DSP",
+        "score": 0.99537,
         "label": 1,
-        "report_count": 141558,
-        "injury_share": 0.995507,
-        "death_share": 0.0,
-        "report_growth": 0.03438,
-        "manufacturer_count": 57,
-        "reason": "report volume pushed the score upward"
-      },
-      {
-        "code": "BZD",
-        "score": 0.746347,
-        "label": 0,
-        "report_count": 13185,
-        "injury_share": 0.362533,
-        "death_share": 0.028593,
-        "report_growth": 0.272069,
-        "manufacturer_count": 43,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "QBJ",
-        "score": 0.501277,
-        "label": 1,
-        "report_count": 75332,
-        "injury_share": 0.020522,
-        "death_share": 0.0,
-        "report_growth": 0.007247,
-        "manufacturer_count": 8,
-        "reason": "the death share pushed the score upward"
-      },
-      {
-        "code": "FDF",
-        "score": 0.222631,
-        "label": 0,
-        "report_count": 3353,
+        "report_count": 1750,
         "injury_share": 0.0,
-        "death_share": 0.001193,
-        "report_growth": -0.052825,
-        "manufacturer_count": 12,
-        "reason": "the death share pushed the score upward"
-      },
-      {
-        "code": "QFG",
-        "score": 0.162812,
-        "label": 1,
-        "report_count": 56133,
-        "injury_share": 0.101402,
-        "death_share": 0.00016,
-        "report_growth": 0.111149,
-        "manufacturer_count": 5,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "LZG",
-        "score": 0.139865,
-        "label": 1,
-        "report_count": 4622,
-        "injury_share": 0.075508,
-        "death_share": 0.0,
-        "report_growth": -0.070955,
-        "manufacturer_count": 7,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "FTR",
-        "score": 0.095152,
-        "label": 0,
-        "report_count": 7661,
-        "injury_share": 0.987338,
-        "death_share": 0.0,
-        "report_growth": 0.0473,
-        "manufacturer_count": 27,
-        "reason": "the death share pushed the score upward"
+        "death_share": 0.002286,
+        "report_growth": 0.096491,
+        "manufacturer_count": 14,
+        "reason": "time since the last recall pushed the score upward"
       }
     ],
     "2024 Q2": [
       {
+        "code": "GCJ",
+        "score": 0.999361,
+        "label": 1,
+        "report_count": 1637,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": -0.051014,
+        "manufacturer_count": 49,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "GEI",
+        "score": 0.999321,
+        "label": 1,
+        "report_count": 2069,
+        "injury_share": 0.144998,
+        "death_share": 0.002417,
+        "report_growth": -0.058261,
+        "manufacturer_count": 99,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "FPA",
+        "score": 0.999162,
+        "label": 1,
+        "report_count": 13887,
+        "injury_share": 0.056888,
+        "death_share": 0.000288,
+        "report_growth": 5.191262,
+        "manufacturer_count": 68,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
         "code": "FRN",
-        "score": 0.996992,
+        "score": 0.999162,
         "label": 1,
         "report_count": 14359,
         "injury_share": 0.014346,
         "death_share": 0.001811,
         "report_growth": -0.147834,
         "manufacturer_count": 73,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "FPA",
-        "score": 0.996926,
-        "label": 1,
-        "report_count": 13887,
-        "injury_share": 0.056888,
-        "death_share": 0.000288,
-        "report_growth": 3.633634,
-        "manufacturer_count": 68,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "CBK",
-        "score": 0.980821,
+        "score": 0.999156,
         "label": 1,
         "report_count": 4219,
         "injury_share": 0.087699,
         "death_share": 0.01351,
         "report_growth": -0.374128,
         "manufacturer_count": 40,
-        "reason": "the injury share pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "GDW",
-        "score": 0.976331,
+        "code": "EOQ",
+        "score": 0.998637,
         "label": 1,
-        "report_count": 3334,
-        "injury_share": 0.092382,
-        "death_share": 0.005399,
-        "report_growth": -0.023433,
-        "manufacturer_count": 21,
-        "reason": "the injury share pushed the score upward"
+        "report_count": 1428,
+        "injury_share": 0.132353,
+        "death_share": 0.006303,
+        "report_growth": -0.025921,
+        "manufacturer_count": 16,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "DZE",
-        "score": 0.894262,
+        "code": "JWH",
+        "score": 0.99852,
         "label": 1,
-        "report_count": 157973,
-        "injury_share": 0.995385,
+        "report_count": 2933,
+        "injury_share": 0.888851,
         "death_share": 0.0,
-        "report_growth": 0.11596,
-        "manufacturer_count": 52,
-        "reason": "report volume pushed the score upward"
+        "report_growth": 0.340494,
+        "manufacturer_count": 35,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "DTB",
-        "score": 0.775422,
-        "label": 0,
-        "report_count": 6309,
-        "injury_share": 0.430655,
-        "death_share": 0.011412,
-        "report_growth": -0.042931,
-        "manufacturer_count": 48,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "QBJ",
-        "score": 0.625692,
+        "code": "OWB",
+        "score": 0.998417,
         "label": 1,
-        "report_count": 81773,
-        "injury_share": 0.022929,
-        "death_share": 0.00011,
-        "report_growth": 0.085502,
-        "manufacturer_count": 6,
-        "reason": "report volume pushed the score upward"
-      },
-      {
-        "code": "OZO",
-        "score": 0.413614,
-        "label": 0,
-        "report_count": 3284,
-        "injury_share": 0.090438,
-        "death_share": 0.005786,
-        "report_growth": -0.28014,
-        "manufacturer_count": 4,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "MGB",
-        "score": 0.321231,
-        "label": 0,
-        "report_count": 3476,
-        "injury_share": 0.907652,
-        "death_share": 0.002589,
-        "report_growth": -0.029863,
-        "manufacturer_count": 23,
-        "reason": "the death share pushed the score upward"
-      },
-      {
-        "code": "PQF",
-        "score": 0.185896,
-        "label": 0,
-        "report_count": 4983,
+        "report_count": 1723,
         "injury_share": 0.0,
         "death_share": 0.0,
-        "report_growth": 0.322101,
-        "manufacturer_count": 3,
-        "reason": "the injury share pushed the score upward"
+        "report_growth": -0.151649,
+        "manufacturer_count": 15,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "LXH",
+        "score": 0.99776,
+        "label": 1,
+        "report_count": 2131,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.528694,
+        "manufacturer_count": 55,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "DSP",
+        "score": 0.997577,
+        "label": 1,
+        "report_count": 1797,
+        "injury_share": 0.0,
+        "death_share": 0.005008,
+        "report_growth": 0.026857,
+        "manufacturer_count": 19,
+        "reason": "time since the last recall pushed the score upward"
       }
     ],
     "2024 Q3": [
       {
+        "code": "GEI",
+        "score": 0.999211,
+        "label": 1,
+        "report_count": 1902,
+        "injury_share": 0.169821,
+        "death_share": 0.002629,
+        "report_growth": -0.080715,
+        "manufacturer_count": 99,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
         "code": "FPA",
-        "score": 0.997831,
+        "score": 0.999163,
         "label": 1,
         "report_count": 19124,
         "injury_share": 0.075978,
         "death_share": 0.0,
         "report_growth": 0.377115,
         "manufacturer_count": 72,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "FRN",
-        "score": 0.99745,
+        "score": 0.999119,
         "label": 1,
         "report_count": 12485,
         "injury_share": 0.011053,
         "death_share": 0.001201,
         "report_growth": -0.13051,
         "manufacturer_count": 92,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "DZE",
-        "score": 0.903446,
+        "code": "GCJ",
+        "score": 0.998785,
         "label": 1,
-        "report_count": 181416,
-        "injury_share": 0.996676,
+        "report_count": 1446,
+        "injury_share": 0.0,
         "death_share": 0.0,
-        "report_growth": 0.148399,
-        "manufacturer_count": 59,
-        "reason": "report volume pushed the score upward"
+        "report_growth": -0.116677,
+        "manufacturer_count": 40,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "CBK",
-        "score": 0.839464,
+        "code": "JWH",
+        "score": 0.998731,
         "label": 1,
-        "report_count": 4482,
-        "injury_share": 0.040161,
-        "death_share": 0.009594,
-        "report_growth": 0.062337,
-        "manufacturer_count": 36,
-        "reason": "the manufacturer count pushed the score upward"
-      },
-      {
-        "code": "QBJ",
-        "score": 0.765766,
-        "label": 1,
-        "report_count": 99141,
-        "injury_share": 0.023008,
-        "death_share": 6.1e-05,
-        "report_growth": 0.212393,
-        "manufacturer_count": 11,
-        "reason": "report volume pushed the score upward"
-      },
-      {
-        "code": "GDW",
-        "score": 0.727415,
-        "label": 1,
-        "report_count": 3485,
-        "injury_share": 0.102439,
-        "death_share": 0.0066,
-        "report_growth": 0.045291,
-        "manufacturer_count": 20,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "LZG",
-        "score": 0.568378,
-        "label": 1,
-        "report_count": 5304,
-        "injury_share": 0.058069,
+        "report_count": 2812,
+        "injury_share": 0.922831,
         "death_share": 0.0,
-        "report_growth": 0.209854,
-        "manufacturer_count": 8,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "QFG",
-        "score": 0.482388,
-        "label": 1,
-        "report_count": 82362,
-        "injury_share": 0.099378,
-        "death_share": 0.000182,
-        "report_growth": 0.264909,
-        "manufacturer_count": 7,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "NAY",
-        "score": 0.418825,
-        "label": 1,
-        "report_count": 3291,
-        "injury_share": 0.139167,
-        "death_share": 0.006989,
-        "report_growth": -0.296795,
-        "manufacturer_count": 9,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "DTB",
-        "score": 0.188311,
-        "label": 0,
-        "report_count": 6380,
-        "injury_share": 0.434013,
-        "death_share": 0.009718,
-        "report_growth": 0.011254,
+        "report_growth": -0.041255,
         "manufacturer_count": 32,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "EOQ",
+        "score": 0.998458,
+        "label": 1,
+        "report_count": 1497,
+        "injury_share": 0.101536,
+        "death_share": 0.008684,
+        "report_growth": 0.048319,
+        "manufacturer_count": 18,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "OWB",
+        "score": 0.998173,
+        "label": 1,
+        "report_count": 2050,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.189785,
+        "manufacturer_count": 19,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "BSZ",
+        "score": 0.998158,
+        "label": 1,
+        "report_count": 1605,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.085193,
+        "manufacturer_count": 7,
+        "reason": "recent recall history pushed the score upward"
+      },
+      {
+        "code": "LXH",
+        "score": 0.997727,
+        "label": 1,
+        "report_count": 1447,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": -0.320976,
+        "manufacturer_count": 51,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "DSP",
+        "score": 0.997467,
+        "label": 1,
+        "report_count": 1870,
+        "injury_share": 0.0,
+        "death_share": 0.007487,
+        "report_growth": 0.040623,
+        "manufacturer_count": 20,
+        "reason": "time since the last recall pushed the score upward"
       }
     ],
     "2024 Q4": [
       {
+        "code": "GEI",
+        "score": 0.999235,
+        "label": 1,
+        "report_count": 1730,
+        "injury_share": 0.152601,
+        "death_share": 0.004046,
+        "report_growth": -0.090431,
+        "manufacturer_count": 99,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
         "code": "FRN",
-        "score": 0.996951,
+        "score": 0.999112,
         "label": 1,
         "report_count": 14037,
         "injury_share": 0.013251,
         "death_share": 0.002066,
         "report_growth": 0.124309,
         "manufacturer_count": 89,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "FPA",
-        "score": 0.994997,
+        "score": 0.999028,
         "label": 1,
         "report_count": 11955,
         "injury_share": 0.112756,
         "death_share": 0.000502,
         "report_growth": -0.374869,
         "manufacturer_count": 83,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "GDW",
-        "score": 0.981007,
+        "code": "JWH",
+        "score": 0.998224,
         "label": 1,
-        "report_count": 3047,
-        "injury_share": 0.084345,
-        "death_share": 0.005251,
-        "report_growth": -0.125681,
-        "manufacturer_count": 24,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "QBJ",
-        "score": 0.881352,
-        "label": 1,
-        "report_count": 90871,
-        "injury_share": 0.023154,
-        "death_share": 6.6e-05,
-        "report_growth": -0.083417,
-        "manufacturer_count": 17,
-        "reason": "the death share pushed the score upward"
-      },
-      {
-        "code": "DZE",
-        "score": 0.878023,
-        "label": 1,
-        "report_count": 216155,
-        "injury_share": 0.998062,
+        "report_count": 2895,
+        "injury_share": 0.901554,
         "death_share": 0.0,
-        "report_growth": 0.191488,
-        "manufacturer_count": 63,
-        "reason": "report volume pushed the score upward"
+        "report_growth": 0.029516,
+        "manufacturer_count": 35,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "BSZ",
+        "score": 0.998194,
+        "label": 1,
+        "report_count": 1557,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": -0.029907,
+        "manufacturer_count": 10,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "OWB",
+        "score": 0.997762,
+        "label": 1,
+        "report_count": 2138,
+        "injury_share": 0.0,
+        "death_share": 0.001871,
+        "report_growth": 0.042927,
+        "manufacturer_count": 15,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
         "code": "CBK",
-        "score": 0.735717,
+        "score": 0.997682,
         "label": 1,
         "report_count": 4894,
         "injury_share": 0.0,
         "death_share": 0.004495,
         "report_growth": 0.091923,
         "manufacturer_count": 31,
-        "reason": "the manufacturer count pushed the score upward"
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "MGB",
-        "score": 0.61701,
-        "label": 0,
-        "report_count": 3514,
-        "injury_share": 0.866534,
-        "death_share": 0.002561,
-        "report_growth": 0.101913,
-        "manufacturer_count": 26,
-        "reason": "the death share pushed the score upward"
-      },
-      {
-        "code": "LZG",
-        "score": 0.562307,
+        "code": "NAY",
+        "score": 0.997373,
         "label": 1,
-        "report_count": 3918,
-        "injury_share": 0.07172,
+        "report_count": 3671,
+        "injury_share": 0.148461,
+        "death_share": 0.00681,
+        "report_growth": 0.115466,
+        "manufacturer_count": 6,
+        "reason": "time since the last recall pushed the score upward"
+      },
+      {
+        "code": "DZE",
+        "score": 0.995058,
+        "label": 1,
+        "report_count": 216155,
+        "injury_share": 0.998062,
         "death_share": 0.0,
-        "report_growth": -0.261312,
-        "manufacturer_count": 8,
-        "reason": "the injury share pushed the score upward"
+        "report_growth": 0.191488,
+        "manufacturer_count": 63,
+        "reason": "time since the last recall pushed the score upward"
       },
       {
-        "code": "QFG",
-        "score": 0.309026,
+        "code": "FOZ",
+        "score": 0.993783,
         "label": 1,
-        "report_count": 69582,
-        "injury_share": 0.103274,
-        "death_share": 0.00023,
-        "report_growth": -0.155169,
-        "manufacturer_count": 8,
-        "reason": "the injury share pushed the score upward"
-      },
-      {
-        "code": "LGW",
-        "score": 0.27647,
-        "label": 0,
-        "report_count": 8045,
-        "injury_share": 0.807831,
-        "death_share": 0.000622,
-        "report_growth": 0.022756,
-        "manufacturer_count": 23,
-        "reason": "the death share pushed the score upward"
+        "report_count": 1403,
+        "injury_share": 0.0,
+        "death_share": 0.0,
+        "report_growth": 0.145306,
+        "manufacturer_count": 51,
+        "reason": "time since the last recall pushed the score upward"
       }
     ]
   },
