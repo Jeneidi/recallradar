@@ -12,11 +12,16 @@
     for (const item of results.demo_quarters[quarter] || []) {
       const row = document.createElement("div");
       row.className = "flag-row";
-      const label = item.label ? "recall window positive" : "no recall in window";
-      row.innerHTML = `<span class="flag-code">${item.code}</span><div class="flag-copy"><div class="flag-title"><b>Ranked flag</b><span class="flag-label">${label}</span></div><p class="flag-reason">${item.reason}</p><p class="data-note">${item.report_count.toLocaleString()} reports, ${pct(item.death_share)} death share</p></div><span class="flag-score">${formatScore(item.score)}<span>risk score</span></span>`;
+      const label = item.label ? "had a recall within 12 months" : "no recall within 12 months";
+      row.innerHTML = `
+<span class="flag-code">${item.code}</span>
+<div class="flag-copy"><div class="flag-title"><b>Flagged</b><span class="flag-label">${label}</span></div>
+<p class="flag-reason">${item.reason}</p>
+<p class="data-note">${item.report_count.toLocaleString()} problem reports, ${pct(item.death_share)} involved a death</p></div>
+<span class="flag-score">${formatScore(item.score)}<span>risk score</span></span>`;
       list.append(row);
     }
-    status.textContent = `Top 10 recorded flags for ${quarter}. Positive labels are held-out recall outcomes, not model inputs.`;
+    status.textContent = `The 10 device types ranked riskiest in ${quarter}. Whether a recall followed is shown for checking only. The model never saw it.`;
   }
 
   function renderChart(results) {
@@ -24,7 +29,8 @@
     for (const row of results.backtest) {
       const wrapper = document.createElement("div");
       wrapper.className = "chart-row";
-      wrapper.innerHTML = `<span class="chart-label">${row.quarter}</span><div class="chart-bars"><div class="bar" title="RecallRadar ${pct(row.model_precision_at_10)}"><i style="width:${row.model_precision_at_10 * 100}%"></i></div><div class="bar volume" title="Report volume ${pct(row.volume_precision_at_10)}"><i style="width:${row.volume_precision_at_10 * 100}%"></i></div></div>`;
+      wrapper.innerHTML = `
+<span class="chart-label">${row.quarter}</span><div class="chart-bars"><div class="bar" title="RecallRadar: ${pct(row.model_precision_at_10)} of top 10 picks had a recall"><i style="width:${row.model_precision_at_10 * 100}%"></i></div><div class="bar volume" title="Number of reports: ${pct(row.volume_precision_at_10)} of top 10 picks had a recall"><i style="width:${row.volume_precision_at_10 * 100}%"></i></div></div>`;
       chart.append(wrapper);
     }
   }
@@ -43,7 +49,7 @@
     renderFlags(results, select.value);
     renderChart(results);
   }).catch((error) => {
-    status.textContent = "Recorded results could not be loaded.";
+    status.textContent = "The saved results could not be loaded.";
     console.error(error);
   });
 })();
